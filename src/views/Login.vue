@@ -7,13 +7,12 @@
                         <div v-if="error" class="alert alert-danger">{{error}}</div>
                         <form class="col-8 mx-auto" action="" @submit.prevent="submit" method="POST">
                             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-        
                             <div class="form-floating">
-                                <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" v-model="form.email">
+                                <input type="email" class="form-control" id="email"  name="email" placeholder="name@example.com" required autofocus v-model="form.email">
                                 <label for="floatingInput">Email address</label>
                             </div>
                             <div class="form-floating">
-                                <input type="password" name="password" class="form-control" id="password" placeholder="Password" v-model="form.password">
+                                <input type="password" class="form-control" id="password" name= "password" placeholder="Password" required v-model="form.password">
                                 <label for="floatingPassword">Password</label>
                             </div>
         
@@ -54,8 +53,9 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(data => {
+            this.$router.replace({ name: "Dashboard" });
             console.log(data);
-          this.$router.replace({ name: "Home" });
+            location.reload();
         })
         .catch(err => {
           this.error = err.message;
