@@ -5,6 +5,8 @@ import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import PreTest from '../views/PreTest.vue'
 import PersonalityTest from '../views/PersonalityTest.vue'
+import Dashboard from '../views/Dashboard.vue'
+/*import {ifAuthenticated} from "../scripts/authentication";*/
 
 Vue.use(VueRouter)
 
@@ -17,10 +19,7 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import('../views/About.vue')
   },
   {
     path: '/login',
@@ -41,6 +40,12 @@ const routes = [
     path: '/personalitytest',
     name: 'PersonalityTest',
     component: PersonalityTest
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Dashboard,
+    /*beforeEnter: ifAuthenticated*/
   },
 ]
 

@@ -35,7 +35,7 @@
                             <p>Team Instinct relies on a trainer's instincts. Instinct's members believe that Pokémon have excellent intuition and are interested in learning more about its connection to the egg hatching process. If you feel that Pokémon are innately talented, and that success in battle can be chalked up to trusting your gut, Instinct is probably the way to go. Team Instinct's mascot is the legendary bird Zapdos.</p>
                         </div>
                         <!-- Incluir rota do perfil do usuário no push -->
-                        <button @click="$router.push('')" class="quiz-info-button w-50 btn btn-lg poke-secondary" type="submit">Go To My Profile</button>
+                        <button @click="$router.push('Login')" class="quiz-info-button w-50 btn btn-lg poke-secondary" type="submit">Log In to Pokémon Lovers</button>
                     </div>
                 </div>
 
