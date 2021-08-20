@@ -3,7 +3,6 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
-                    <div v-if="error" class="alert alert-danger">{{error}}</div>
                     <form class="col-8 mx-auto" action="" @submit.prevent="submit" method="POST">
                         <h1 class="h3 mb-3 fw-normal">Fill the information below to sign up</h1>
                             <div class="form-floating" style="margin-top: 3%;">
@@ -15,7 +14,7 @@
                                 <label for="floatingInput">Email address</label>
                             </div>
                             <div class="form-floating" style="margin-top: 3%;">
-                                <input type="text" class="form-control" id="username" placeholder="Your Username" required autofocus v-model="form.username" pattern="^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$">
+                                <input type="text" class="form-control" id="username" placeholder="Your Username" required autofocus v-model="form.username">
                                 <label for="floatingInput">Username</label>
                             </div>
                             <div class="form-floating" style="margin-top: 3%;">
@@ -36,7 +35,6 @@
 
 <script>
 import firebase from "firebase";
-/*import { ValidationProvider } from 'vee-validate';*/
 
 export default {
   name: 'Sign-Up',
@@ -64,8 +62,8 @@ export default {
             .updateProfile({
               displayName: this.form.name
             })
-            .then(() => {})
-            .then(this.$router.replace({ name: "PreTest" }))
+            /*.then(() => {});*/
+            .then(this.$router.replace({ name: "PreTest" }));
         })
         .catch(err => {
           this.error = err.message;

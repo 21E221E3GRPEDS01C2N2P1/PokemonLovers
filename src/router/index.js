@@ -6,6 +6,7 @@ import Signup from '../views/Signup.vue'
 import PreTest from '../views/PreTest.vue'
 import PersonalityTest from '../views/PersonalityTest.vue'
 import Dashboard from '../views/Dashboard.vue'
+import MockTest from '../views/MockTest.vue'
 /*import {ifAuthenticated} from "../scripts/authentication";*/
 
 Vue.use(VueRouter)
@@ -45,6 +46,12 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
+    /*beforeEnter: ifAuthenticated*/
+  },
+  {
+    path: '/mocktest',
+    name: 'MockTest',
+    component: MockTest,
     /*beforeEnter: ifAuthenticated*/
   },
 ]
