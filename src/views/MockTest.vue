@@ -1,7 +1,7 @@
 <template>
 	<div class="d-flex justify-content-center">
     <div v-if="showScore">
-        <b-card title="Results" style="max-width: 40rem;">
+        <b-card title="Results" style="max-width: 40rem; padding: 20px;">
 			<h1>You Scored {{score}} of {{quiz.questions.length}}</h1>
 			<div v-if="score === 0">
 				<img src="../assets/sad_pikachu.jpeg" alt="Sad Pikachu" class="img-quiz" >
@@ -29,7 +29,7 @@
     </b-card>
     </span>
     <span v-else>
-    <b-card title="PokéQuiz" style="max-width: 20rem;" class="mb-2">
+    <b-card title="PokéQuiz" style="max-width: 20rem; padding: 20px;" class="mb-2">
    <b-card-text>
       Question No.{{currentQuestion + 1}} of {{quiz.questions.length}}
     </b-card-text>

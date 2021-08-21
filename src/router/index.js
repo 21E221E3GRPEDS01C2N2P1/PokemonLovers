@@ -3,11 +3,10 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
-import PreTest from '../views/PreTest.vue'
 import PersonalityTest from '../views/PersonalityTest.vue'
 import Dashboard from '../views/Dashboard.vue'
 import MockTest from '../views/MockTest.vue'
-/*import {ifAuthenticated} from "../scripts/authentication";*/
+import firebase from "firebase/app";
 
 Vue.use(VueRouter)
 
@@ -15,44 +14,58 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      requiresAuth: false
+    }
   },
   {
     path: '/about',
     name: 'About',
-    component: () => import('../views/About.vue')
+    component: () => import('../views/About.vue'),
+    meta: {
+      requiresAuth: false
+    }
   },
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: Login,
+    meta: {
+      requiresAuth: false
+    }
   },
   {
     path: '/signup',
     name: 'Sign-Up',
-    component: Signup
-  },
-  {
-    path: '/quiz-info',
-    name: 'PreTest',
-    component: PreTest
+    component: Signup,
+    meta: {
+      requiresAuth: false
+    }
   },
   {
     path: '/personalitytest',
     name: 'PersonalityTest',
-    component: PersonalityTest
+    component: PersonalityTest,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
-    /*beforeEnter: ifAuthenticated*/
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/mocktest',
     name: 'MockTest',
     component: MockTest,
-    /*beforeEnter: ifAuthenticated*/
+    meta: {
+      requiresAuth: true
+    }
   },
 ]
 
@@ -61,5 +74,23 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach(async (to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  if (requiresAuth && !await firebase.getCurrentUser()){
+    next('login');
+  }else{
+    next();
+  }
+});
+
+firebase.getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+      const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+          unsubscribe();
+          resolve(user);
+      }, reject);
+  })
+};
 
 export default router

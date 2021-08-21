@@ -6,7 +6,7 @@
                     <div class="row">
                         <div v-if="error" class="alert alert-danger">{{error}}</div>
                         <form class="col-8 mx-auto" action="" @submit.prevent="submit" method="POST">
-                            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                            <h1 class="h3 mb-3 fw-normal">Please Sign In</h1>
                             <div class="form-floating">
                                 <input type="email" class="form-control" id="email"  name="email" placeholder="name@example.com" required autofocus v-model="form.email">
                                 <label for="floatingInput">Email address</label>
@@ -55,12 +55,15 @@ export default {
         .then(data => {
             this.$router.replace({ name: "Dashboard" });
             console.log(data);
-            location.reload();
         })
         .catch(err => {
           this.error = err.message;
         });
-    }
+    },
+    /*redirect() {
+      this.$router.replace({ name: "Dashboard" });
+      location.reload();
+    }*/
   }
 }
 </script>

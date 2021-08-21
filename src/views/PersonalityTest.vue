@@ -2,8 +2,14 @@
     <div id="app" v-cloak>
         <div class="container container-fluid">
             <div class="row col-8 mx-auto">
-                <h1>{{ quiz.title }}</h1>
-                <div >
+                <span v-if="!startQuiz">
+                    <h1>Quiz: Which League Do You Belong To?</h1>
+                    <p>In order to join Pokémon Lovers, test your Pokémon knowledge and start collecting as many Pokémon as you want, you must first take the test to find out to which team you belong: Team Valor, Team Instinct or Team Mystic?</p>
+                    <p>Each team has its own particularities, which one suits you best? Find out now!</p>
+                    <button @click="startQuizFunc()" class="quiz-info-button w-50 btn btn-lg poke-secondary" type="submit">Take quiz!</button>
+                </span>
+                <span v-else>
+                    <h1>{{ quiz.title }}</h1>
                     <div v-for="(question, index) in quiz.questions" v-bind:key="question.id">
                         <div v-show="index === questionIndex">
                             <h3>{{ question.text }}</h3>
@@ -34,14 +40,11 @@
                             <img class="team-badge" src="../assets/team-instinct.jpg">
                             <p>Team Instinct relies on a trainer's instincts. Instinct's members believe that Pokémon have excellent intuition and are interested in learning more about its connection to the egg hatching process. If you feel that Pokémon are innately talented, and that success in battle can be chalked up to trusting your gut, Instinct is probably the way to go. Team Instinct's mascot is the legendary bird Zapdos.</p>
                         </div>
-                        <!-- Incluir rota do perfil do usuário no push -->
-                        <button @click="$router.push('Login')" class="quiz-info-button w-50 btn btn-lg poke-secondary" type="submit">Log In to Pokémon Lovers</button>
+                        <button @click="redirect()" class="quiz-info-button w-50 btn btn-lg poke-secondary" type="submit">Log In to Pokémon Lovers</button>
                     </div>
-                </div>
-
+                </span>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -55,10 +58,14 @@ export default {
         return{
             quiz: personalitytest,
             questionIndex: 0,
+            startQuiz: false,
             userResponses: Array(),
         }
     },
     methods:{
+            startQuizFunc(){
+                this.startQuiz = true;
+            },
             next: function() {
                 this.questionIndex++;
                 console.log(this.userResponses);
@@ -82,9 +89,10 @@ export default {
                     }
                 }
                 return maxEl;
+            },
+            redirect() {
+                this.$router.push('Login');
             }
         }
     }
-
-
 </script>

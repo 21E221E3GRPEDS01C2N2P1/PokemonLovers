@@ -3,6 +3,7 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
+                  <div v-if="error" class="alert alert-danger">{{error}}</div>
                     <form class="col-8 mx-auto" action="" @submit.prevent="submit" method="POST">
                         <h1 class="h3 mb-3 fw-normal">Fill the information below to sign up</h1>
                             <div class="form-floating" style="margin-top: 3%;">
@@ -22,7 +23,7 @@
                                 <label for="floatingPassword">Password</label>
                             </div>
                             <div class="row" style="margin-top: 5%;">
-                                <button class="w-50 btn btn-lg poke-secondary" type="submit">Next</button>
+                                <button class="w-50 btn btn-lg poke-secondary" type="submit" @click="redirect()">Next</button>
                                 <button class="w-50 btn btn-lg poke-primary" type="reset">Clear</button>
                             </div>
                     </form>
@@ -62,13 +63,17 @@ export default {
             .updateProfile({
               displayName: this.form.name
             })
-            /*.then(() => {});*/
-            .then(this.$router.replace({ name: "PreTest" }));
+            .then(() => {})
+            .then(this.$router.replace({ name: "PersonalityTest" }));
         })
         .catch(err => {
           this.error = err.message;
         });
-    }
+    },
+    /*redirect(){
+      this.$router.push('PersonalityTest');
+      location.reload();
+    }*/
   }
 }
 </script>
