@@ -6,8 +6,8 @@
         </a>
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><router-link to="/" class="nav-link px-2">Home</router-link></li>
-            <li><a href="#" class="nav-link px-2">Features</a></li>
-            <li><a href="#" class="nav-link px-2">Pricing</a></li>
+            <!-- <li><a href="#" class="nav-link px-2">Features</a></li>
+            <li><a href="#" class="nav-link px-2">Pricing</a></li> -->
             <li><a href="#" class="nav-link px-2">FAQs</a></li>
             <li><router-link to="/about" class="nav-link px-2">About</router-link></li>
         </ul>
