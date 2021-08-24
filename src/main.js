@@ -3,6 +3,10 @@ import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import App from './App.vue'
 import firebase from "firebase/app";
 import store from './store';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -15,6 +19,10 @@ Vue.config.productionTip = false;
 
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
+
+library.add(faChevronUp)
+library.add(faChevronDown)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 const firebaseConfig = {
   apiKey: "AIzaSyDigjYrc1x-aYIa0cYTKPZwosEZyIV75N0",

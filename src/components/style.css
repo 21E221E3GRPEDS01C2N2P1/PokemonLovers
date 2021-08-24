@@ -161,4 +161,23 @@ a {
   margin: auto;
   height: auto;
 }
+
+.faq {
+  margin: auto;
+  max-width: 70%;
+}
+
+.collapsed > .when-opened,
+    :not(.collapsed) > .when-closed {
+        display: none;
+}
+
+.faq-icon{
+  display: inline-block;
+  float: right;
+  font-size: 12px;
+  vertical-align: middle;
+  margin-top: 3px;
+  color: black;
+}
 	

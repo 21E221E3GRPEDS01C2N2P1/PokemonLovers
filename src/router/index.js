@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Faq from '../views/Faq.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import PersonalityTest from '../views/PersonalityTest.vue'
 import Dashboard from '../views/Dashboard.vue'
+import UserCreate from '../views/UserCreate.vue'
+import UserEdit from '../views/UserEdit.vue'
 import MockTest from '../views/MockTest.vue'
 import firebase from "firebase/app";
 
@@ -23,6 +26,14 @@ const routes = [
     path: '/about',
     name: 'About',
     component: () => import('../views/About.vue'),
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/faq',
+    name: 'Faq',
+    component: Faq,
     meta: {
       requiresAuth: false
     }
@@ -55,6 +66,22 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/usercreate',
+    name: 'UserCreate',
+    component: UserCreate,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/useredit',
+    name: 'UserEdit',
+    component: UserEdit,
     meta: {
       requiresAuth: true
     }
