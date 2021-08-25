@@ -103,9 +103,8 @@ a {
 
 .card{
     min-width: 100%;
-    border-radius: 15px;
+    border-radius: 0 15px;
     padding: 20px;
-    /*box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);*/
 }
 .card-q{
     min-width: 60%;
@@ -171,7 +170,12 @@ a {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 var(--bs-secondary);
+  margin: 8px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px 0 var(--bs-secondary);
   margin: 8px;
 }
 
@@ -196,22 +200,26 @@ a {
   display: table;
 }
 
-.title {
-  color: grey;
-}
-
 .button {
   border: none;
   outline: 0;
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: var(--bs-primary);
+  background: var(--bs-secondary);
   text-align: center;
   cursor: pointer;
   width: 100%;
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: 0.5s;
 }
 
 .button:hover {
-  background-color: #555;
+  background-color: var(--bs-primary);
+}
+
+.row {
+  justify-content: center;
+  margin-top: 5%;
 }
