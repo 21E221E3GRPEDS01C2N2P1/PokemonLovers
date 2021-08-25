@@ -5,24 +5,36 @@
                 <div class="container">
                     <div class="row">
                         <div v-if="error" class="alert alert-danger">{{error}}</div>
-                        <form class="col-8 mx-auto" action="" @submit.prevent="submit" method="POST">
+                        <div class="col-8 mx-auto">
                             <h1 class="h3 mb-3 fw-normal">Please Sign In</h1>
-                            <div class="form-floating">
+                            <div class="form-floating" style="margin-top: 3%;">
                                 <input type="email" class="form-control" id="email"  name="email" placeholder="name@example.com" required autofocus v-model="form.email">
                                 <label for="floatingInput">Email address</label>
                             </div>
-                            <div class="form-floating">
+                            <div class="form-floating" style="margin-top: 3%;">
                                 <input type="password" class="form-control" id="password" name= "password" placeholder="Password" required v-model="form.password">
                                 <label for="floatingPassword">Password</label>
                             </div>
         
-                            <div class="checkbox mb-3">
+                            <div class="checkbox mb-3" style="margin-top: 3%;">
                                 <label>
                                     <input type="checkbox" value="remember-me"> Remember me
                                 </label>
                             </div>
-                            <button class="w-100 btn btn-lg poke-secondary" type="submit">Sign in</button>
-                        </form>
+
+                            <div class="row" style="margin-top: 5%;">
+                              <div class="col-md-6">
+                                <button class="btn btn-lg poke-secondary enter-btn" @click="submit" type="submit">Sign in</button>
+                              </div>
+                              <div class="col-md-6">
+                                <button class="btn btn-lg enter-btn social-btn" type="submit" @click="socialLogin">
+                                  <img alt="Google Logo" src="../assets/google-logo.png" style="width: 6%;" /> Sign in with Google
+                                </button>
+                              </div>
+                            </div>
+                            <br/>
+                            <p style="text-align: center"><router-link to="/ResetPassword">Forgot your password?</router-link></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -33,6 +45,7 @@
 
 <script>
 import firebase from "firebase";
+/*import { GoogleAuthProvider } from "firebase/auth";*/
 
 export default {
   name: 'Login',
@@ -60,10 +73,16 @@ export default {
           this.error = err.message;
         });
     },
-    /*redirect() {
-      this.$router.replace({ name: "Dashboard" });
-      location.reload();
-    }*/
+    socialLogin(){
+      const provider = new firebase.auth.GoogleAuthProvider();
+
+      firebase.auth().signInWithPopup(provider).then(() => {
+        this.$router.replace({ name: "Dashboard" });
+      })
+      .catch(err => {
+        this.error = err.message;
+      });
+    }
   }
 }
 </script>

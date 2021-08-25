@@ -23,8 +23,12 @@
                                 <label for="floatingPassword">Password</label>
                             </div>
                             <div class="row" style="margin-top: 5%;">
-                                <button class="w-50 btn btn-lg poke-secondary" type="submit" @click="redirect()">Next</button>
-                                <button class="w-50 btn btn-lg poke-primary" type="reset">Clear</button>
+                              <div class="col-md-6">
+                                <button class="btn btn-lg poke-secondary enter-btn" type="submit" @click="redirect()">Next</button>
+                              </div>
+                              <div class="col-md-6">
+                                <button class="btn btn-lg poke-primary enter-btn" type="reset">Clear</button>
+                              </div>
                             </div>
                     </form>
                 </div>
@@ -70,10 +74,6 @@ export default {
           this.error = err.message;
         });
     },
-    /*redirect(){
-      this.$router.push('PersonalityTest');
-      location.reload();
-    }*/
   }
 }
 </script>

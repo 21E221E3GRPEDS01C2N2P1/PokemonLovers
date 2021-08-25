@@ -2,14 +2,15 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Faq from '../views/Faq.vue'
+import ContactUs from '../views/ContactUs.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
+import ResetPassword from '../views/ResetPassword.vue'
 import PersonalityTest from '../views/PersonalityTest.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Profile from '../views/Profile.vue'
-import UserCreate from '../views/UserCreate.vue'
-import UserEdit from '../views/UserEdit.vue'
 import MockTest from '../views/MockTest.vue'
+import ErrorPage from '../views/ErrorPage.vue'
 import firebase from "firebase/app";
 
 Vue.use(VueRouter)
@@ -40,9 +41,25 @@ const routes = [
     }
   },
   {
+    path: '/contactus',
+    name: 'ContactUs',
+    component: ContactUs,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
     path: '/login',
     name: 'Login',
     component: Login,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/resetpassword',
+    name: 'ResetPassword',
+    component: ResetPassword,
     meta: {
       requiresAuth: false
     }
@@ -80,27 +97,19 @@ const routes = [
     }
   },
   {
-    path: '/usercreate',
-    name: 'UserCreate',
-    component: UserCreate,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: '/useredit',
-    name: 'UserEdit',
-    component: UserEdit,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
     path: '/mocktest',
     name: 'MockTest',
     component: MockTest,
     meta: {
       requiresAuth: true
+    }
+  },
+  {
+    path: '*',
+    name: 'ErrorPage',
+    component: ErrorPage,
+    meta: {
+      requiresAuth: false
     }
   },
 ]

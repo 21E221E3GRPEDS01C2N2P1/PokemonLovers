@@ -60,6 +60,9 @@ export default {
             questionIndex: 0,
             startQuiz: false,
             userResponses: Array(),
+            /*form: {
+                team: ""
+            },*/
         }
     },
     methods:{
@@ -92,7 +95,39 @@ export default {
             },
             redirect() {
                 this.$router.push('Login');
+            },
+            /*openStorage () {
+                return JSON.parse(localStorage.getItem('form'))
+            },
+            saveStorage (form) {
+                localStorage.setItem('form', JSON.stringify(form))
+            },
+            updateForm (input, value) {
+                this.form[input] = value
+
+                let storedForm = this.openStorage()
+                if (!storedForm) storedForm = {}
+                storedForm[input] = value
+                this.saveStorage(storedForm)
             }
+        },
+        created () {
+            const storedForm = this.openStorage()
+                if (storedForm) {
+                    this.form = {
+                        ...this.form,
+                        ...storedForm
+                    }
+                }
+        }*/
+        /*watch: {
+            input: function () {
+                if (isLocalStorage()) {
+                    localStorage.setItem('storedData', form.team)
+                    console.log(form.team)
+                }
         }
-    }
+    }*/
+    }   
+}
 </script>

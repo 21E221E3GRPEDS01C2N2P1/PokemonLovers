@@ -162,11 +162,42 @@ a {
   height: auto;
 }
 
-.faq {
+.img-404{
+  min-width: 5rem;
+  width: 30%;
+  display: flex;
+  justify-content: center;
   margin: auto;
-  max-width: 70%;
+  height: auto;
 }
 
+.faq {
+  margin: auto;
+  max-width: 50%;
+}
+
+.faq-area{
+  width: 100%; 
+  text-align: left;
+  background-color: #003a70;
+  border-color: #003a70;
+}
+
+.faq-area:hover{
+  background-color: #003a70;
+  border-color: #003a70;
+  color: #ffc107;
+}
+
+.faq-area:focus{
+  background-color: #003a70;
+  border-color: #003a70;
+}
+
+.faq-area:visited{
+  background-color: #003a70;
+  border-color: #003a70;
+}
 .collapsed > .when-opened,
     :not(.collapsed) > .when-closed {
         display: none;
@@ -178,19 +209,19 @@ a {
   font-size: 12px;
   vertical-align: middle;
   margin-top: 3px;
-  color: black;
+  color: #fff;
 }
 
-.textareaElement {
-  width: 300px;
-  min-height: 17px;
-  border: 1px solid #ccc;
-  max-height: 150px;
-  overflow-x: hidden;
-  overflow-y: auto;
+.faq-icon:hover{
+  color: #ffc107;
 }
 
 .textarea {
+  width: 70%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50px;
@@ -202,5 +233,22 @@ a {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.enter-btn{
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-btn{
+  background-color: #f8f9fa;
+  border-color: #f2f2f2;
+  box-shadow:0 3px 0 #cccccc;
+}
+
+.social-btn:hover{
+  color: #4da9ff;
 }
 	
