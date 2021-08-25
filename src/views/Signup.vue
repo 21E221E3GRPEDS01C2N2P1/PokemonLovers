@@ -5,7 +5,7 @@
                 <div class="row">
                   <div v-if="error" class="alert alert-danger">{{error}}</div>
                     <form class="col-8 mx-auto" action="" @submit.prevent="submit" method="POST">
-                        <h1 class="h3 mb-3 fw-normal">Fill the information below to sign up</h1>
+                        <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
                             <div class="form-floating" style="margin-top: 3%;">
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Your name" value required autofocus v-model="form.name">
                                 <label for="email">Name</label>

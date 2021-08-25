@@ -6,6 +6,7 @@ import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import PersonalityTest from '../views/PersonalityTest.vue'
 import Dashboard from '../views/Dashboard.vue'
+import Profile from '../views/Profile.vue'
 import UserCreate from '../views/UserCreate.vue'
 import UserEdit from '../views/UserEdit.vue'
 import MockTest from '../views/MockTest.vue'
@@ -68,6 +69,14 @@ const routes = [
     component: Dashboard,
     meta: {
       requiresAuth: true
+    }
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile,
+    meta: {
+      requiresAuth: false
     }
   },
   {

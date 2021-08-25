@@ -180,4 +180,27 @@ a {
   margin-top: 3px;
   color: black;
 }
+
+.textareaElement {
+  width: 300px;
+  min-height: 17px;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.textarea {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+
+.user-icon {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 	
