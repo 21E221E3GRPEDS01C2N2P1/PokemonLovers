@@ -83,7 +83,7 @@ export default {
             ],
         },
       {
-            questionText: 'Which is the oldest Pokémon',
+            questionText: 'Which is the oldest Pokémon?',
             answerOptions: [
                 { answerText: 'Arceus', isCorrect: true },
                 { answerText: 'Rowlet', isCorrect: false },
