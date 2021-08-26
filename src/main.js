@@ -11,6 +11,8 @@ import { faCog } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faHashtag } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faBolt } from '@fortawesome/free-solid-svg-icons'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -31,6 +33,8 @@ library.add(faCog)
 library.add(faEnvelope)
 library.add(faHashtag)
 library.add(faUser)
+library.add(faBolt)
+library.add(faAngleRight)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 const firebaseConfig = {

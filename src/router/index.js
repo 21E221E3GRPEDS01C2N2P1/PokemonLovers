@@ -10,7 +10,9 @@ import ResetPassword from '../views/ResetPassword.vue'
 import PersonalityTest from '../views/PersonalityTest.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Profile from '../views/Profile.vue'
-import MockTest from '../views/MockTest.vue'
+import MockTestEasy from '../views/MockTestEasy.vue'
+import MockTestMedium from '../views/MockTestMedium.vue'
+import MockTestHard from '../views/MockTestHard.vue'
 import ErrorPage from '../views/ErrorPage.vue'
 import firebase from "firebase/app";
 
@@ -106,9 +108,25 @@ const routes = [
     }
   },
   {
-    path: '/mocktest',
-    name: 'MockTest',
-    component: MockTest,
+    path: '/mocktesteasy',
+    name: 'MockTestEasy',
+    component: MockTestEasy,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/mocktestmedium',
+    name: 'MockTestmedium',
+    component: MockTestMedium,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/mocktesthard',
+    name: 'MockTestHard',
+    component: MockTestHard,
     meta: {
       requiresAuth: true
     }

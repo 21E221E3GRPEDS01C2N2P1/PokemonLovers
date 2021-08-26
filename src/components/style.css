@@ -301,8 +301,45 @@ a {
 }
 
 .privacy{
-  margin-top: 5%;
   width: 60%;
   text-align: justify;
 }
+
+.dash-links{
+  color: #000000;
+}
+
+.dash-links:hover{
+  color: #003a70;
+}
+
+.sublinhado {
+  position: relative;
+  text-decoration: none;
+  color:#000000;
+}
+
+.sublinhado:hover{
+  color:#e15151;
+}
+
+.sublinhado::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -5px;
+  left: 0;
+  background-color: #e15151;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.sublinhado:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+
 	

@@ -1,8 +1,9 @@
 <template>
-    <div id="signup-form" class="form-signin py-5">
+    <div id="signup-form" class="form-signin">
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
+                  <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/signup">Sign Up</router-link></p>
                   <div v-if="error" class="alert alert-danger">{{error}}</div>
                     <form class="col-8 mx-auto" action="" @submit.prevent="submit" method="POST">
                         <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
@@ -30,6 +31,8 @@
                                 <button class="btn btn-lg poke-primary enter-btn" type="reset">Clear</button>
                               </div>
                             </div>
+                            <br/>
+                            <p class="alignment">Already have an account? <router-link to="/login">Sign in here</router-link></p>
                     </form>
                 </div>
             </div>

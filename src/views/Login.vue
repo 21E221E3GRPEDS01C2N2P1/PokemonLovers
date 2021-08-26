@@ -1,9 +1,10 @@
 <template>
     <div class="login">
-        <div class="form-signin py-5">
+        <div class="form-signin">
             <div class="container-fluid">
                 <div class="container">
                     <div class="row">
+                      <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/login">Login</router-link></p>
                         <div v-if="error" class="alert alert-danger">{{error}}</div>
                         <div class="col-8 mx-auto">
                             <h1 class="h3 mb-3 fw-normal">Please Sign In</h1>
@@ -34,6 +35,7 @@
                             </div>
                             <br/>
                             <p class="alignment"><router-link to="/ResetPassword">Forgot your password?</router-link></p>
+                            <p class="alignment">Don't have an account yet? <router-link to="/signup">Register here</router-link></p>
                         </div>
                     </div>
                 </div>

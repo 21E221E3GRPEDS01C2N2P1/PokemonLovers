@@ -1,8 +1,10 @@
 <template>
+<div class="container container-fluid">
+    <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/dashboard">Dashboard</router-link> &#8250; <router-link class="sublinhado" to="/mocktesteasy">PokéQuiz</router-link></p>
 	<div class="d-flex justify-content-center">
     <div v-if="showScore">
         <b-card title="Results" class="card-quiz-dimensions1">
-			<h1>You Scored {{score}} of {{quiz.questions.length}}</h1>
+			<h1 class="h1 mb-3 fw-normal">You Scored {{score}} of {{quiz.questions.length}}</h1>
 			<div v-if="score === 0">
 				<img src="../assets/sad_pikachu.jpeg" alt="Sad Pikachu" class="img-quiz" >
 				<br/>
@@ -11,7 +13,7 @@
 			<div v-else>
 				<img src="../assets/coins.png" alt="Moedas" class="img-quiz2">
 				<br/>
-				<h2 class="alignment">Congrats! You get {{tokens}} tokens!</h2>
+				<h2 class="alignment h2 mb-3 fw-normal">Congrats! You get {{tokens}} tokens!</h2>
 				<br/>
 			</div>
 			<button @click="$router.push('Dashboard')" class="quiz-btn w-50 btn poke-secondary">Go Back to My Dashboard</button>
@@ -22,7 +24,7 @@
          <b-card
          img-src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/pokemon-unite-data-de-lancamento-mobile.jpg" img-alt="Image" img-top title="PokéQuiz" class="mb-2 card-img-dimensions">
         <b-card-text>
-			Are you a true Pokémon master? Time to find out! In this quiz, you have 10 seconds to answer each question, and for each one you get right, you get 10 tokens that can be exchanged for Pokémons to form your team.
+			Are you a true Pokémon master? Time to find out! In this quiz, you have 10 seconds to answer each question, and for each one you get right, you get 1 token that can be exchanged for Pokémons to form your team.
 			Are you ready to show all your Pokémon knowledge?
         </b-card-text>
       <button @click="startQuizFunc()" class="quiz-btn w-50 btn poke-secondary">Start Quiz</button>
@@ -49,13 +51,15 @@
     </span>
   </div>
   </div>
+</div>
+
 </template>
 
 <script>
-import mocktest from "../scripts/mocktest.js";
+import mocktest from "../scripts/mocktesteasy.js";
 
 export default {
-  name: 'MockTest',
+  name: 'MockTestEasy',
   components: {},
   data(){
         return {
@@ -80,7 +84,7 @@ export default {
             let nextQuestion = this.currentQuestion + 1;
             if(isCorrect){
                 this.score = this.score + 1;
-				this.tokens = this.score * 10;
+				this.tokens = this.score;
             }
             if(nextQuestion < this.quiz.questions.length){
             this.currentQuestion = nextQuestion;
