@@ -6,12 +6,14 @@
                     <div class="row">
                         <div v-if="error" class="alert alert-danger">{{error}}</div>
                         <form class="col-8 mx-auto" action="" @submit.prevent="forgetPassword" method="POST">
-                            <h1 class="h3 mb-3 fw-normal">Well shit</h1>
-                            <div class="form-floating" style="margin-top: 3%;">
+                            <h1 class="h3 mb-3 fw-normal">Reset Password</h1>
+                            <p class="alignment">Please enter your registered e-mail address below, so a recovery e-mail can be sent.</p>
+                            <p class="alignment">If you don't receive the recovery e-mail in a short while, please check your spam box.</p>
+                            <div class="form-floating form-spacing">
                                 <input type="email" class="form-control" id="email"  name="email" placeholder="name@example.com" required autofocus v-model="form.email">
                                 <label for="floatingInput">Email address</label>
                             </div>
-                            <button class="w-100 btn btn-lg poke-secondary" type="submit" style="margin-top: 3%;">Reset My Password</button>
+                            <button class="w-50 btn btn-lg poke-primary form-spacing quiz-btn" type="submit">Reset My Password</button>
                             <br/>
                         </form>
                     </div>

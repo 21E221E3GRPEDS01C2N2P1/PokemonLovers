@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Faq from '../views/Faq.vue'
+import Privacy from '../views/Privacy.vue'
 import ContactUs from '../views/ContactUs.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
@@ -36,6 +37,14 @@ const routes = [
     path: '/faq',
     name: 'Faq',
     component: Faq,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/privacy',
+    name: 'Privacy',
+    component: Privacy,
     meta: {
       requiresAuth: false
     }

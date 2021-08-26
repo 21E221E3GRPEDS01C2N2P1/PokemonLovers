@@ -104,11 +104,29 @@ a {
 .card{
     min-width: 100%;
     border-radius: 15px;
-    /*box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);*/
 }
 .card-q{
     min-width: 60%;
 }
+
+.card-quiz-dimensions1{
+  max-width: 40rem; 
+  padding: 20px;
+}
+
+.card-quiz-dimensions2{
+  max-width: 20rem; 
+  padding: 20px;
+}
+
+.card-img-dimensions{
+  max-width: 20rem;
+}
+
+.countdown{
+  font-size: 40px;
+}
+
 .ans-option-btn{
     min-width: 50%;
     font-size: 16px;
@@ -250,5 +268,41 @@ a {
 
 .social-btn:hover{
   color: #4da9ff;
+}
+
+.alignment{
+  text-align: center;
+}
+
+.card-faq{
+  border-radius: 5px;
+}
+
+.faq-bg {
+  background-color: #cce6ff;
+}
+
+.form-spacing2{
+  margin-top: 5%;
+}
+
+.form-spacing{
+  margin-top: 3%;
+}
+
+.dashboard-columns{
+  margin: auto; 
+  display: flex; 
+  justify-content: left;
+}
+
+.g-logo{
+  width: 6%;
+}
+
+.privacy{
+  margin-top: 5%;
+  width: 60%;
+  text-align: justify;
 }
 	

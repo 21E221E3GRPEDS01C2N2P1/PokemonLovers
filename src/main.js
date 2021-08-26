@@ -2,6 +2,7 @@ import Vue from 'vue'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import App from './App.vue'
 import firebase from "firebase/app";
+import 'firebase/firestore';
 import store from './store/store';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
@@ -41,7 +42,8 @@ const firebaseConfig = {
   appId: "1:130647182285:web:b591f67d75efcfad169284"
 }
 
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+export const db = firebaseApp.firestore();
 
 firebase.auth().onAuthStateChanged(user => {
   store.dispatch("fetchUser", user);

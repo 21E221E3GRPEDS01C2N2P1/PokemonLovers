@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center" style="margin-top: 5%;">
+    <div class="row justify-content-center form-spacing">
       <div class="col-md-9">
         
-      <div class="row" style="margin: auto; display: flex; justify-content: left;">
-        <h1 style="text-align: center;">My Challenges</h1>
+      <div class="row dashboard-columns">
+        <h1 class="alignment">My Challenges</h1>
         <br/>
         <div class="col-md-4">
             <div class="card">
@@ -38,8 +38,8 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3" style="text-align: center;">
-          <div class="card bg-light" style="margin: auto; display: flex; justify-content: center;">
+    <div class="col-md-3 alignment">
+          <div class="card bg-light dashboard-columns">
               <div class="card-body">
                 <img class="user-icon" src="../assets/user-icon.svg">
                 <h3>{{user.data.displayName}}</h3>

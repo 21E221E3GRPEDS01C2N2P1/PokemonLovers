@@ -27,7 +27,7 @@
                     <div v-if="questionIndex === quiz.questions.length">
                         <h2>Your Results</h2>
                         <p>Congrats! you are:</p>
-                        <h3 style="text-align: center">{{ score() }}</h3>
+                        <h3 class="alignment">{{ score() }}</h3>
                         <div v-if="score() === 'Team Mystic'">
                             <img class="team-badge" src="../assets/team-mystic.jpeg">
                             <p>Team Mystic relies on analyzing every situation. Mystic's members believe that Pokémon have immeasurable wisdom and are interested in learning more about why Pokémon experience evolution. Team Mystic is most interested in evolution; beyond that, the members of this faction are cool to a point of intimidation. If you're interested in the science behind what makes Pokémon tick — and are convinced that keeping calm is all it takes for success — choose Team Mystic. Mystic is represented by Articuno, the icy legendary.</p>
