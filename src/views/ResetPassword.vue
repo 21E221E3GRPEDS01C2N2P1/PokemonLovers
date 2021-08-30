@@ -6,7 +6,7 @@
                 <div class="container">
                     <div class="row">
                         <div v-if="error" class="alert alert-danger">{{error}}</div>
-                        <form class="col-8 mx-auto" action="" @submit.prevent="forgetPassword" method="POST">
+                        <form class="col-8 mx-auto" action="" @submit.prevent="forgetPassword" method="POST" autocomplete="off">
                             <h1 class="h3 mb-3 fw-normal">Reset Password</h1>
                             <p class="alignment">Please enter your registered e-mail address below, so a recovery e-mail can be sent.</p>
                             <p class="alignment">If you don't receive the recovery e-mail in a short while, please check your spam box.</p>
