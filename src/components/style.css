@@ -341,5 +341,9 @@ a {
   transform: scaleX(1);
 }
 
+.pre-formatted {
+  white-space: pre;
+}
+
 
 	
