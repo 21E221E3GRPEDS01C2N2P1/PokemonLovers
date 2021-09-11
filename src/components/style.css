@@ -215,6 +215,14 @@ a {
   transition: 0.5s;
 }
 
+.a_button {
+  color: white;
+}
+
+.a_button:hover {
+  color: white;
+}
+
 .button:hover {
   background-color: var(--bs-primary);
 }
