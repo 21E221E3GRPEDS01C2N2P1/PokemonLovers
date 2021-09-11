@@ -1,12 +1,19 @@
 <template>
-    <div id="app" v-cloak>
+    <div id="p-quiz" v-cloak>
         <div class="container container-fluid">
+            <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/signup">Sign Up</router-link> &#8250; <router-link class="sublinhado" to="/personalitytest">Quiz - Which Team Do You Belong To?</router-link></p>
             <div class="row col-8 mx-auto">
-                <h1>{{ quiz.title }}</h1>
-                <div >
+                <span v-if="!startQuiz">
+                    <h1 class="h1 mb-3 fw-normal">Quiz: Which League Do You Belong To?</h1>
+                    <p>In order to join Pokémon Lovers, test your Pokémon knowledge and start collecting as many Pokémon as you want, you must first take the test to find out to which team you belong: Team Valor, Team Instinct or Team Mystic?</p>
+                    <p>Each team has its own particularities, which one suits you best? Find out now!</p>
+                    <button @click="startQuizFunc()" class="quiz-info-button w-50 btn btn-lg poke-secondary" type="submit">Take quiz!</button>
+                </span>
+                <span v-else>
+                    <h1 class="h1 mb-3 fw-normal">{{ quiz.title }}</h1>
                     <div v-for="(question, index) in quiz.questions" v-bind:key="question.id">
                         <div v-show="index === questionIndex">
-                            <h3>{{ question.text }}</h3>
+                            <h3 class="h3 mb-3 fw-normal">{{ question.text }}</h3>
                             <ol>
                                 <li v-for="response in question.responses" v-bind:key="response.value">
                                     <label>
@@ -19,9 +26,9 @@
                         </div>
                     </div>
                     <div v-if="questionIndex === quiz.questions.length">
-                        <h2>Your Results</h2>
+                        <h2 class="h2 mb-3 fw-normal">Your Results</h2>
                         <p>Congrats! you are:</p>
-                        <h3 style="text-align: center">{{ score() }}</h3>
+                        <h3 class="alignment h3 mb-3 fw-normal">{{ score() }}</h3>
                         <div v-if="score() === 'Team Mystic'">
                             <img class="team-badge" src="../assets/team-mystic.jpeg">
                             <p>Team Mystic relies on analyzing every situation. Mystic's members believe that Pokémon have immeasurable wisdom and are interested in learning more about why Pokémon experience evolution. Team Mystic is most interested in evolution; beyond that, the members of this faction are cool to a point of intimidation. If you're interested in the science behind what makes Pokémon tick — and are convinced that keeping calm is all it takes for success — choose Team Mystic. Mystic is represented by Articuno, the icy legendary.</p>
@@ -34,14 +41,11 @@
                             <img class="team-badge" src="../assets/team-instinct.jpg">
                             <p>Team Instinct relies on a trainer's instincts. Instinct's members believe that Pokémon have excellent intuition and are interested in learning more about its connection to the egg hatching process. If you feel that Pokémon are innately talented, and that success in battle can be chalked up to trusting your gut, Instinct is probably the way to go. Team Instinct's mascot is the legendary bird Zapdos.</p>
                         </div>
-                        <!-- Incluir rota do perfil do usuário no push -->
-                        <button @click="$router.push('Login')" class="quiz-info-button w-50 btn btn-lg poke-secondary" type="submit">Log In to Pokémon Lovers</button>
+                        <button @click="redirect()" class="quiz-info-button w-50 btn btn-lg poke-secondary" type="submit">Log In to Pokémon Lovers</button>
                     </div>
-                </div>
-
+                </span>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -55,10 +59,17 @@ export default {
         return{
             quiz: personalitytest,
             questionIndex: 0,
+            startQuiz: false,
             userResponses: Array(),
+            /*form: {
+                team: ""
+            },*/
         }
     },
     methods:{
+            startQuizFunc(){
+                this.startQuiz = true;
+            },
             next: function() {
                 this.questionIndex++;
                 console.log(this.userResponses);
@@ -82,9 +93,42 @@ export default {
                     }
                 }
                 return maxEl;
+            },
+            redirect() {
+                this.$router.push('Login');
+            },
+            /*openStorage () {
+                return JSON.parse(localStorage.getItem('form'))
+            },
+            saveStorage (form) {
+                localStorage.setItem('form', JSON.stringify(form))
+            },
+            updateForm (input, value) {
+                this.form[input] = value
+
+                let storedForm = this.openStorage()
+                if (!storedForm) storedForm = {}
+                storedForm[input] = value
+                this.saveStorage(storedForm)
             }
+        },
+        created () {
+            const storedForm = this.openStorage()
+                if (storedForm) {
+                    this.form = {
+                        ...this.form,
+                        ...storedForm
+                    }
+                }
+        }*/
+        /*watch: {
+            input: function () {
+                if (isLocalStorage()) {
+                    localStorage.setItem('storedData', form.team)
+                    console.log(form.team)
+                }
         }
-    }
-
-
+    }*/
+    }   
+}
 </script>

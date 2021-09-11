@@ -1,11 +1,14 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import createPersistedState from "vuex-persistedstate";
+
 Vue.use(Vuex);
+
 export default new Vuex.Store({
   state: {
     user: {
       loggedIn: false,
-      data: null
+      data: null,
     }
   },
   getters: {
@@ -19,7 +22,7 @@ export default new Vuex.Store({
     },
     SET_USER(state, data) {
       state.user.data = data;
-    }
+    },
   },
   actions: {
     fetchUser({ commit }, user) {
@@ -33,5 +36,6 @@ export default new Vuex.Store({
         commit("SET_USER", null);
       }
     }
-  }
+  },
+  plugins: [createPersistedState()]
 });

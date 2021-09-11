@@ -1,30 +1,40 @@
 <template>
-    <div id="signup-form" class="form-signin py-5">
+    <div id="signup-form" class="form-signin">
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
-                    <form class="col-8 mx-auto" action="" @submit.prevent="submit" method="POST">
-                        <h1 class="h3 mb-3 fw-normal">Fill the information below to sign up</h1>
-                            <div class="form-floating" style="margin-top: 3%;">
+                  <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/signup">Sign Up</router-link></p>
+                  <div id="errorMessage" v-if="error" class="alert alert-danger">
+                    <div class="pre-formatted">{{error}}</div>
+                    </div>
+                    <form class="col-8 mx-auto" action="" @submit.prevent="submit" method="POST" autocomplete="off">
+                        <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+                            <div class="form-floating form-spacing">
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Your name" value required autofocus v-model="form.name">
                                 <label for="email">Name</label>
                             </div>
-                            <div class="form-floating" style="margin-top: 3%;">
+                            <div class="form-floating form-spacing">
                                 <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com" value required autofocus v-model="form.email">
                                 <label for="floatingInput">Email address</label>
                             </div>
-                            <div class="form-floating" style="margin-top: 3%;">
+                            <div class="form-floating form-spacing">
                                 <input type="text" class="form-control" id="username" placeholder="Your Username" required autofocus v-model="form.username">
                                 <label for="floatingInput">Username</label>
                             </div>
-                            <div class="form-floating" style="margin-top: 3%;">
+                            <div class="form-floating form-spacing">
                                 <input type="password" class="form-control" id="password" placeholder="Password" required autofocus v-model="form.password">
                                 <label for="floatingPassword">Password</label>
                             </div>
-                            <div class="row" style="margin-top: 5%;">
-                                <button class="w-50 btn btn-lg poke-secondary" type="submit">Next</button>
-                                <button class="w-50 btn btn-lg poke-primary" type="reset">Clear</button>
+                            <div class="row form-spacing2">
+                              <div class="col-md-6">
+                                <button class="btn btn-lg poke-secondary enter-btn" type="submit" @click="redirect()">Next</button>
+                              </div>
+                              <div class="col-md-6">
+                                <button class="btn btn-lg poke-primary enter-btn" type="reset">Clear</button>
+                              </div>
                             </div>
+                            <br/>
+                            <p class="alignment">Already have an account? <router-link to="/login">Sign in here</router-link></p>
                     </form>
                 </div>
             </div>
@@ -54,7 +64,23 @@ export default {
   },
   methods: {
     submit() {
-      firebase
+      if (!this.validUsername(this.form.username)) {
+        let username_error = `          
+            The username must abide to the following criteria:\n
+            - Number of characters must be at least 8, and up to 20 characters long
+            - Must only contain alphanumeric characters, underscore and dot
+            - Underscore and dot can't be at the end or start of a username
+            - Underscore and dot can't be next to each other (e.g user_.name)
+            - Underscore or dot can't be used two or more times in a row (e.g user__name / user..name)
+            `
+        ;
+        this.error = username_error;
+        this.form.name = ''
+        this.form.email = ''
+        this.form.username = ''
+        this.form.password = ''
+      } else {
+        firebase
         .auth()
         .createUserWithEmailAndPassword(this.form.email, this.form.password)
         .then(data => {
@@ -62,13 +88,22 @@ export default {
             .updateProfile({
               displayName: this.form.name
             })
-            /*.then(() => {});*/
-            .then(this.$router.replace({ name: "PreTest" }));
+            .then(() => {})
+            .then(this.$router.replace({ name: "PersonalityTest" }));
         })
         .catch(err => {
           this.error = err.message;
+          this.form.name = ''
+          this.form.email = ''
+          this.form.username = ''
+          this.form.password = ''
         });
-    }
+      }
+    },
+    validUsername: function (username) {
+      var re = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
+      return re.test(username);
+    },
   }
 }
 </script>
