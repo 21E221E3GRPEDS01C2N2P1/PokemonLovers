@@ -10,6 +10,7 @@ import ResetPassword from '../views/ResetPassword.vue'
 import PersonalityTest from '../views/PersonalityTest.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Profile from '../views/Profile.vue'
+import EditProfile from '../views/EditProfile.vue'
 import MockTestEasy from '../views/MockTestEasy.vue'
 import MockTestMedium from '../views/MockTestMedium.vue'
 import MockTestHard from '../views/MockTestHard.vue'
@@ -103,6 +104,14 @@ const routes = [
     path: '/profile',
     name: 'Profile',
     component: Profile,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/editprofile',
+    name: 'EditProfile',
+    component: EditProfile,
     meta: {
       requiresAuth: true
     }
