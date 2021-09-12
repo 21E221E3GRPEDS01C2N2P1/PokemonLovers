@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@700&display=swap');
+
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -20,7 +22,7 @@
     --bs-danger: #f65d4f;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
-    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-sans-serif: 'Open Sans', 'Raleway', sans-serif;
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   }
@@ -486,4 +488,18 @@ a {
   display: grid;
   align-content: center;
   margin-left: 20px;
+  justify-items: start;
+}
+.input-group-text {
+  background: var(--bs-secondary);
+  border-color: #003a70;
+  color: white;
+}
+
+.input-group-text:hover {
+    cursor: pointer;
+    color: yellow;
+}
+.form-control {
+  border-color: #003a70;
 }

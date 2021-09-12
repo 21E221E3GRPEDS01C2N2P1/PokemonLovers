@@ -31,10 +31,6 @@
                   <label for="email">New user</label>
               </div>
               <div class="form-floating form-spacing">
-                  <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com" value autofocus v-model="editprofile.email">
-                  <label for="floatingInput">New email address</label>
-              </div>
-              <div class="form-floating form-spacing">
                   <b-form-file v-model="file" class="mt-3" plain></b-form-file>
               </div>
               <br/>
