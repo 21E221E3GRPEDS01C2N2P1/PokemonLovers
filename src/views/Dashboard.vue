@@ -45,7 +45,7 @@
                 <h3 class="h3 mb-3 fw-normal">{{user.data.displayName}}</h3>
                 <h5 class="h5 mb-3 fw-normal">Level: Rookie</h5>
                 <br/>
-                <router-link class="dash-links" to="#"><font-awesome-icon icon="user" /> My Profile</router-link>
+                <router-link class="dash-links" to="/profile"><font-awesome-icon icon="user" /> My Profile</router-link>
                 <hr/>
                 <router-link class="dash-links" to="#"><font-awesome-icon icon="envelope" /> Inbox</router-link>
                 <hr/>
