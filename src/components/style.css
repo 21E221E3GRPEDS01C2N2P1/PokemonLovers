@@ -81,7 +81,16 @@ a {
     color: var(--bs-white)
   }
 
+  .poke-secondary a{
+    background-color: var(--bs-secondary);
+    color: var(--bs-white)
+  }
+
   .poke-secondary:hover{
+    color: var(--bs-warning)
+  }
+
+  .poke-secondary a:hover{
     color: var(--bs-warning)
   }
 
@@ -196,7 +205,6 @@ a {
 
 .card:hover {
   box-shadow: 0 4px 8px 0 var(--bs-secondary);
-  margin: 8px;
 }
 
 .card img {
@@ -233,6 +241,10 @@ a {
   font-size: 1.5em;
   text-decoration: none;
   transition: 0.5s;
+}
+
+.button {
+
 }
 
 .a_button {
@@ -304,6 +316,39 @@ a {
 
 .faq-icon:hover{
   color: #ffc107;
+}
+
+.button-blue-yellow {
+  width: max-content; 
+  text-align: left;
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+  border-radius: 5px;
+}
+
+.button-blue-yellow a {
+  color: white;
+  margin: 3px;
+}
+
+.button-blue-yellow:hover{
+  background-color: var(--bs-secondary);
+  border-color: #003a70;
+  color: #ffc107;
+}
+
+.button-blue-yellow a:hover {
+  color: #ffc107;
+}
+
+.button-blue-yellow:focus{
+  background-color: #003a70;
+  border-color: #003a70;
+}
+
+.button-blue-yellow:visited{
+  background-color: #003a70;
+  border-color: #003a70;
 }
 
 .textarea {
@@ -415,4 +460,30 @@ a {
 
 .pre-formatted {
   white-space: pre;
+}
+
+.profile-container {
+  margin-top: 5rem;
+}
+
+.profile-container-status {
+  text-align: center;
+  color: #F65D4F;
+  
+}
+
+.profile-container-content {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-container-content-avatar {
+  min-width: 10rem;
+  max-width: 10rem;
+}
+
+.profile-container-content-text {
+  display: grid;
+  align-content: center;
+  margin-left: 20px;
 }
