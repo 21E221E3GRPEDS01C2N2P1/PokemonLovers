@@ -11,7 +11,7 @@
               <h2>Ana Carolina</h2>
               <p class="title">CEO & Founder</p>
               <p>anacarolina@email.com</p>
-              <button class="button"><a class="a_button" href="https://github.com/heikousens" target="_blank">Github</a></button>
+              <button class="btn btn-lg poke-secondary enter-btn"><a class="a_button" href="https://github.com/heikousens" target="_blank">Github</a></button>
             </div>
           </div>
         </div>
@@ -22,7 +22,7 @@
               <h2>Bruno Cister</h2>
               <p class="title">CEO & Founder</p>
               <p>brunocister@email.com</p>
-              <button class="button"><a class="a_button" href="https://github.com/BrunoCister" target="_blank">Github</a></button>
+              <button class="btn btn-lg poke-secondary enter-btn"><a class="a_button" href="https://github.com/BrunoCister" target="_blank">Github</a></button>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
               <h2>Jennifer Omena</h2>
               <p class="title">CEO & Founder</p>
               <p>jenniferomena@email.com</p>
-              <button class="button"><a class="a_button" href="https://github.com/gennipher" target="_blank">Github</a></button>
+              <button class="btn btn-lg poke-secondary enter-btn"><a class="a_button" href="https://github.com/gennipher" target="_blank">Github</a></button>
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@
               <h2>Wallace dos Anjos</h2>
               <p class="title">CEO & Founder</p>
               <p>wallacedosanjos@email.com</p>
-              <button class="button"><a class="a_button" href="https://github.com/wallaceanjos" target="_blank">Github</a></button>
+              <button class="btn btn-lg poke-secondary enter-btn"><a class="a_button" href="https://github.com/wallaceanjos" target="_blank">Github</a></button>
             </div>
           </div>
         </div>

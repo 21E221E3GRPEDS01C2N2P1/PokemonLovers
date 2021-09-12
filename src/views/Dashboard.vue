@@ -2,9 +2,13 @@
   <div class="container">
     <div class="row justify-content-center form-spacing">
       <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/dashboard">Dashboard</router-link></p>
+      <div class="accordion faq" role="tablist">
+        <h1 class="alignment h1 mb-3 fw-normal">Profile</h1>
+        <br/>
+      </div>
+      
       <div class="col-md-9">
       <div class="row dashboard-columns">
-        <h1 class="alignment h1 mb-3 fw-normal">My Challenges</h1>
         <br/>
         <div class="col-md-4">
             <div class="card">
@@ -47,11 +51,9 @@
                 <br/>
                 <router-link class="dash-links" to="/profile"><font-awesome-icon icon="user" /> My Profile</router-link>
                 <hr/>
-                <router-link class="dash-links" to="#"><font-awesome-icon icon="envelope" /> Inbox</router-link>
+                <router-link class="dash-links" to="/searchprofile"><font-awesome-icon icon="search" /> Search Profile</router-link>
                 <hr/>
-                <router-link class="dash-links" to="#"><font-awesome-icon icon="bolt" /> My Team</router-link>
-                <hr/>
-                <router-link class="dash-links" to="#"><font-awesome-icon icon="cog" /> Settings</router-link>
+                <router-link class="dash-links" to="#"><font-awesome-icon icon="star" /> My Team</router-link>
           </div>
         </div>
     </div>
