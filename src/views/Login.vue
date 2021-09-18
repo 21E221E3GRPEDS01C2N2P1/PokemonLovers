@@ -34,7 +34,7 @@
                               </div>
                             </div>
                             <br/>
-                            <p class="alignment"><router-link to="/ResetPassword">Forgot your password?</router-link></p>
+                            <p class="alignment"><router-link to="/login/resetpassword">Forgot your password?</router-link></p>
                             <p class="alignment">Don't have an account yet? <router-link to="/signup">Register here</router-link></p>
                         </div>
                     </div>

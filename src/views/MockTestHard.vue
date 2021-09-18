@@ -93,6 +93,7 @@ export default {
             else{
                 this.showScore = true;
 				this.showTokens = true;
+                this.$store.commit('addTokens',this.tokens)
             }
         },
         countDownTimer() {

@@ -95,6 +95,7 @@ export default {
                 return maxEl;
             },
             redirect() {
+                this.$store.commit('userTeam',this.score())
                 this.$router.push('Login');
             },
             /*openStorage () {

@@ -14,7 +14,10 @@
           <h3 class="h3 fw-normal">{{ user.data.displayName }}</h3>
           <h5 class="h5
            fw-normal">Level: Rookie</h5>
-          <button class="button-blue-yellow"><router-link to="/editprofile"><font-awesome-icon icon="pen" /> Edit Profile</router-link></button>
+           <h7 class="h7
+           fw-normal">My Team: {{ $store.state.team }}</h7>
+           <br/>
+          <button class="button-blue-yellow"><router-link to="/dashboard/profile/editprofile"><font-awesome-icon icon="pen" /> Edit Profile</router-link></button>
         </div>
       </div>
     </div>

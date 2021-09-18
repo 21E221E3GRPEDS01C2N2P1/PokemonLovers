@@ -48,10 +48,11 @@
                 <img class="user-icon" src="../assets/user-icon.svg">
                 <h3 class="h3 mb-3 fw-normal">{{user.data.displayName}}</h3>
                 <h5 class="h5 mb-3 fw-normal">Level: Rookie</h5>
+                <p><font-awesome-icon icon="coins" /> My tokens: {{ $store.state.tokens }}</p>
                 <br/>
-                <router-link class="dash-links" to="/profile"><font-awesome-icon icon="user" /> My Profile</router-link>
+                <router-link class="dash-links" to="/dashboard/profile"><font-awesome-icon icon="user" /> My Profile</router-link>
                 <hr/>
-                <router-link class="dash-links" to="/searchprofile"><font-awesome-icon icon="search" /> Search Profile</router-link>
+                <router-link class="dash-links" to="/dashboard/profile/searchprofile"><font-awesome-icon icon="search" /> Search Profile</router-link>
                 <hr/>
                 <router-link class="dash-links" to="#"><font-awesome-icon icon="star" /> My Team</router-link>
           </div>
@@ -73,13 +74,13 @@ export default {
   },
     methods: {
         redirectE() {
-          this.$router.push('MockTestEasy');
+          this.$router.push('/dashboard/MockTestEasy');
         },
         redirectM() {
-          this.$router.push('MockTestMedium');
+          this.$router.push('/dashboard/MockTestMedium');
         },
         redirectH() {
-          this.$router.push('MockTestHard');
+          this.$router.push('/dashboard/MockTestHard');
         }
     }
 };

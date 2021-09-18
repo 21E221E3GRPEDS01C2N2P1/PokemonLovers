@@ -70,7 +70,7 @@ const routes = [
     }
   },
   {
-    path: '/resetpassword',
+    path: '/login/resetpassword',
     name: 'ResetPassword',
     component: ResetPassword,
     meta: {
@@ -86,7 +86,7 @@ const routes = [
     }
   },
   {
-    path: '/personalitytest',
+    path: 'personalitytest',
     name: 'PersonalityTest',
     component: PersonalityTest,
     meta: {
@@ -102,7 +102,7 @@ const routes = [
     }
   },
   {
-    path: '/profile',
+    path: '/dashboard/profile',
     name: 'Profile',
     component: Profile,
     meta: {
@@ -110,7 +110,7 @@ const routes = [
     }
   },
   {
-    path: '/editprofile',
+    path: '/dashboard/profile/editprofile',
     name: 'EditProfile',
     component: EditProfile,
     meta: {
@@ -118,7 +118,7 @@ const routes = [
     }
   },
   {
-    path: '/searchprofile',
+    path: '/dashboard/profile/searchprofile',
     name: 'SearchProfile',
     component: SearchProfile,
     meta: {
@@ -126,7 +126,7 @@ const routes = [
     }
   },
   {
-    path: '/mocktesteasy',
+    path: '/dashboard/mocktesteasy',
     name: 'MockTestEasy',
     component: MockTestEasy,
     meta: {
@@ -134,7 +134,7 @@ const routes = [
     }
   },
   {
-    path: '/mocktestmedium',
+    path: '/dashboard/mocktestmedium',
     name: 'MockTestmedium',
     component: MockTestMedium,
     meta: {
@@ -142,7 +142,7 @@ const routes = [
     }
   },
   {
-    path: '/mocktesthard',
+    path: '/dashboard/mocktesthard',
     name: 'MockTestHard',
     component: MockTestHard,
     meta: {
