@@ -4,16 +4,16 @@
             <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/signup">Sign Up</router-link> &#8250; <router-link class="sublinhado" to="/personalitytest">Quiz - Which Team Do You Belong To?</router-link></p>
             <div class="row col-8 mx-auto">
                 <span v-if="!startQuiz">
-                    <h1 class="h1 mb-3 fw-normal">Quiz: Which League Do You Belong To?</h1>
+                    <h1 class="h1 mb-3">Quiz: Which League Do You Belong To?</h1>
                     <p>In order to join Pokémon Lovers, test your Pokémon knowledge and start collecting as many Pokémon as you want, you must first take the test to find out to which team you belong: Team Valor, Team Instinct or Team Mystic?</p>
                     <p>Each team has its own particularities, which one suits you best? Find out now!</p>
                     <button @click="startQuizFunc()" class="quiz-info-button w-50 btn btn-lg poke-secondary" type="submit">Take quiz!</button>
                 </span>
                 <span v-else>
-                    <h1 class="h1 mb-3 fw-normal">{{ quiz.title }}</h1>
+                    <h1 class="h1 mb-3">{{ quiz.title }}</h1>
                     <div v-for="(question, index) in quiz.questions" v-bind:key="question.id">
                         <div v-show="index === questionIndex">
-                            <h3 class="h3 mb-3 fw-normal">{{ question.text }}</h3>
+                            <h3 class="h3 mb-3">{{ question.text }}</h3>
                             <ol>
                                 <li v-for="response in question.responses" v-bind:key="response.value">
                                     <label>
@@ -26,9 +26,9 @@
                         </div>
                     </div>
                     <div v-if="questionIndex === quiz.questions.length">
-                        <h2 class="h2 mb-3 fw-normal">Your Results</h2>
+                        <h2 class="h2 mb-3">Your Results</h2>
                         <p>Congrats! you are:</p>
-                        <h3 class="alignment h3 mb-3 fw-normal">{{ score() }}</h3>
+                        <h3 class="alignment h3 mb-3">{{ score() }}</h3>
                         <div v-if="score() === 'Team Mystic'">
                             <img class="team-badge" src="../assets/team-mystic.jpeg">
                             <p>Team Mystic relies on analyzing every situation. Mystic's members believe that Pokémon have immeasurable wisdom and are interested in learning more about why Pokémon experience evolution. Team Mystic is most interested in evolution; beyond that, the members of this faction are cool to a point of intimidation. If you're interested in the science behind what makes Pokémon tick — and are convinced that keeping calm is all it takes for success — choose Team Mystic. Mystic is represented by Articuno, the icy legendary.</p>
