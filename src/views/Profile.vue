@@ -2,20 +2,20 @@
  <div class="container">
     <p><router-link class="sublinhado" to="/dashboard">Dashboard</router-link> &#8250; <router-link class="sublinhado" to="/profile">{{ user.data.displayName }}</router-link></p>
     <div class="accordion faq" role="tablist">
-      <h1 class="alignment h1 mb-3 fw-normal">Profile</h1>
+      <h1 class="alignment h1 mb-3">Profile</h1>
     </div>
     <div class="profile-container">
       <div class="profile-container-content">
         <div class="profile-container-content-avatar">
-          <h3 class="h6 fw-normal profile-container-status">Mestre Pokémon</h3>
+          <h3 class="h6 profile-container-status">Mestre Pokémon</h3>
           <img class="user-icon" src="../assets/user-icon.svg" />
         </div>
         <div class="profile-container-content-text">
-          <h3 class="h3 fw-normal">{{ user.data.displayName }}</h3>
+          <h3 class="h3">{{ user.data.displayName }}</h3>
           <h5 class="h5
-           fw-normal">Level: Rookie</h5>
+          ">Level: Rookie</h5>
            <h7 class="h7
-           fw-normal">My Team: {{ $store.state.team }}</h7>
+          ">My Team: {{ $store.state.team }}</h7>
            <br/>
           <button class="button-blue-yellow"><router-link to="/dashboard/profile/editprofile"><font-awesome-icon icon="pen" /> Edit Profile</router-link></button>
         </div>
@@ -23,10 +23,10 @@
     </div>
 
     <!-- <div class="col-md-3 alignment">
-          <h3 class="h5 mb-3 fw-normal">Mestre Pokémon</h3>
+          <h3 class="h5 mb-3">Mestre Pokémon</h3>
           <img class="user-icon" src="../assets/user-icon.svg" />
-          <h3 class="h3 mb-3 fw-normal">{{ user.data.displayName }}</h3>
-          <h5 class="h5 mb-3 fw-normal">Level: Rookie</h5>
+          <h3 class="h3 mb-3">{{ user.data.displayName }}</h3>
+          <h5 class="h5 mb-3">Level: Rookie</h5>
           <br />
           <button class="button-blue-yellow"><router-link class="dash-links" to="/editprofile"><font-awesome-icon icon="pen" /> Edit Profile</router-link></button>
     </div> -->

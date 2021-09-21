@@ -25,6 +25,7 @@ import 'bootstrap-vue/dist/bootstrap-vue-icons.min.css'
 import './components/style.css';
 import router from './router'
 
+
 Vue.config.productionTip = false;
 
 Vue.use(BootstrapVue)
