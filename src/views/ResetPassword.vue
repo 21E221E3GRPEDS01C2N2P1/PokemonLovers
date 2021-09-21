@@ -1,6 +1,6 @@
 <template>
     <div class="login container">
-      <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/login">Login</router-link> &#8250; <router-link class="sublinhado" to="/resetpassword">Forgot My Password</router-link></p>
+      <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/login">Login</router-link> &#8250; <router-link class="sublinhado" to="/login/resetpassword">Forgot My Password</router-link></p>
         <div class="form-signin py-5">
             <div class="container-fluid">
                 <div class="container">

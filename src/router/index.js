@@ -86,7 +86,7 @@ const routes = [
     }
   },
   {
-    path: 'personalitytest',
+    path: '/personalitytest',
     name: 'PersonalityTest',
     component: PersonalityTest,
     meta: {

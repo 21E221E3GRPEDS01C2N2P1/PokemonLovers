@@ -19,7 +19,7 @@
     </div> -->
 
     <div class="container">
-          <p><router-link class="sublinhado" to="/profile">{{ user.data.displayName }}</router-link> &#8250; <router-link class="sublinhado" to="/editprofile">Edit Profile</router-link></p>
+          <p><router-link class="sublinhado" to="/dashboard/profile">{{ user.data.displayName }}</router-link> &#8250; <router-link class="sublinhado" to="/dashboard/editprofile">Edit Profile</router-link></p>
           <div class="accordion faq" role="tablist">
             <h1 class="alignment h1 mb-3 fw-normal">Edit Profile</h1>
             <br/>
@@ -36,7 +36,7 @@
               <br/>
               <div class="row form-spacing2">
                 <div class="col-md-6">
-                  <button class="btn btn-lg poke-secondary enter-btn " type="submit" ><router-link to="/profile">Save Changes</router-link></button>
+                  <button class="btn btn-lg poke-secondary enter-btn " type="submit" ><router-link to="/dashboard/profile">Save Changes</router-link></button>
                 </div>
               </div>
       </form>
