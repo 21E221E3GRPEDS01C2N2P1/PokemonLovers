@@ -17,7 +17,7 @@
                         <p>Oh no! But don't worry, even great Pokémon trainers lose a battle every once in a while, and there will be plenty of other chances to prove you can still be the very best.</p>
                     </div>
                     <div v-else>
-                        <img src="../assets/coins.png" alt="Moedas" class="img-quiz2">
+                        <img src="../assets/coins.png" alt="Coins in case player got at least one question right" class="img-quiz2">
                         <br/>
                         <h2 class="alignment h2 mb-3 fw-normal">Congrats! You get {{tokens}} tokens!</h2>
                         <br/>
@@ -28,7 +28,7 @@
             <div class="card-q" v-else>
                 <span v-if="!startQuiz">
                     <b-card
-                    img-src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/pokemon-unite-data-de-lancamento-mobile.jpg" img-alt="Image" img-top title="PokéQuiz" class="mb-2 card-img-dimensions">
+                    img-src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/pokemon-unite-data-de-lancamento-mobile.jpg" img-alt="Pokémon group" img-top title="PokéQuiz" class="mb-2 card-img-dimensions">
                     <b-card-text>
                         Are you a true Pokémon master? Time to find out! In this quiz, you have 10 seconds to answer each question, and for each one you get right, you get 10 tokens that can be exchanged for Pokémons to form your team.
                         Are you ready to show all your Pokémon knowledge?

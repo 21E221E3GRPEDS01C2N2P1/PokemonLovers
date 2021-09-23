@@ -2,7 +2,7 @@
   <div class="detail">
     <div class="detail-view" v-if="show">
       <div v-if="pokemon" class="image">
-        <img :src="imageUrl + pokemon.id + '.gif'" alt="">
+        <img :src="imageUrl + pokemon.id + '.gif'" alt="Pokémon's Sprite">
       </div>
       <div v-if="pokemon" class="data">
         <h2>{{ pokemon.name }}</h2>

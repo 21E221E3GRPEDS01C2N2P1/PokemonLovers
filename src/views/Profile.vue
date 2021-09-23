@@ -12,7 +12,7 @@
       <div class="profile-container-content">
         <div class="profile-container-content-avatar">
           <h3 class="h6 fw-normal profile-container-status">Pokémon Master</h3>
-          <img class="user-icon" src="../assets/user-icon.svg" />
+          <img class="user-icon" src="../assets/user-icon.svg" alt="Neutral user icon" />
         </div>
         <div class="profile-container-content-text">
           <h3 class="h3 fw-normal">{{ user.data.displayName }}</h3>

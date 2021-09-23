@@ -36,15 +36,15 @@
                         <p>Congrats! you are:</p>
                         <h3 class="alignment h3 mb-3">{{ score() }}</h3>
                         <div v-if="score() === 'Team Mystic'">
-                            <img class="team-badge" src="../assets/team-mystic.jpeg">
+                            <img class="team-badge" src="../assets/team-mystic.jpeg" alt="Team Mystic badge">
                             <p>Team Mystic relies on analyzing every situation. Mystic's members believe that Pokémon have immeasurable wisdom and are interested in learning more about why Pokémon experience evolution. Team Mystic is most interested in evolution; beyond that, the members of this faction are cool to a point of intimidation. If you're interested in the science behind what makes Pokémon tick — and are convinced that keeping calm is all it takes for success — choose Team Mystic. Mystic is represented by Articuno, the icy legendary.</p>
                         </div>
                         <div v-if="score() === 'Team Valor'">
-                            <img class="team-badge" src="../assets/team-valor.jpg">
+                            <img class="team-badge" src="../assets/team-valor.jpg" alt="Team Valor badge">
                             <p>Team Valor relies on strength in battle. Valor's members believe that Pokémon are stronger and more warmhearted than humans and are interested in enhancing their natural power. Team Valor's M.O. is very much in line with what Pokémon trainers have been taught from the get-go: To be the very best Pokémon master, you've got to train for it. Also, if you like the fire bird legendary Moltres, that's another reason to go with Valor; Moltres is its mascot.</p>
                         </div>
                         <div v-if="score() === 'Team Instinct'">
-                            <img class="team-badge" src="../assets/team-instinct.jpg">
+                            <img class="team-badge" src="../assets/team-instinct.jpg" alt="Team Instinct badge">
                             <p>Team Instinct relies on a trainer's instincts. Instinct's members believe that Pokémon have excellent intuition and are interested in learning more about its connection to the egg hatching process. If you feel that Pokémon are innately talented, and that success in battle can be chalked up to trusting your gut, Instinct is probably the way to go. Team Instinct's mascot is the legendary bird Zapdos.</p>
                         </div>
                         <button @click="redirect()" class="quiz-info-button w-50 btn btn-lg poke-secondary" type="submit">Log In to Pokémon Lovers</button>

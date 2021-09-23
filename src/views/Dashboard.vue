@@ -65,7 +65,7 @@
           <div class="dashboard-columns">
             <div class=" w-100 mx-auto px-5" >
               <span class="poke-profile-avatar-background">
-                <img class="user-icon" src="../assets/user-icon.svg">
+                <img class="user-icon" src="../assets/user-icon.svg" alt="Neutral user icon">
               </span>
               <h3 class="poke-profile-name h3 mb-3">{{user.data.displayName}}</h3>
               <div class="poke-profile-nav">
