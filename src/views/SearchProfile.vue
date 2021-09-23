@@ -12,7 +12,7 @@
     <b-input-group size="sm" class="mb-2">
       <b-form-input type="search" placeholder="Username" class="input-search"></b-form-input>
       <b-input-group-prepend is-text >
-        <b-icon icon="search" @click="show = !show"></b-icon>
+        <b-icon icon="search" class="search-icon" @click="show = !show"></b-icon>
       </b-input-group-prepend>
     </b-input-group>
     <p style="display:none" v-if="show">Encontre um usuário</p>
