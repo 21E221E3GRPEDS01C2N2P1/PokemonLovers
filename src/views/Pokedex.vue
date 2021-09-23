@@ -1,9 +1,17 @@
 <template>
-  <div class="pokedex">
-    <span class="cardpokedex" v-for="(pokemon, index) in pokemonList" :key="index">
-      <p>{{ pokemon.id }}: {{ pokemon.name }}</p>
-      <img :src="imageUrl + pokemon.id + '.gif'" alt="Imagem do pokemon">      
-    </span>
+  <div>
+    <div class="poke-breadcrumb">
+      <router-link class="sublinhado" to="/dashboard">Dashboard</router-link>
+      <span> &#8250; </span>
+      <router-link class="sublinhado" to="/dashboard/pokedex">Pokédex</router-link>
+    </div>
+    <div class="pokedex">
+      <span class="cardpokedex" v-for="(pokemon, index) in pokemonList" :key="index">
+        <p>{{ pokemon.id }}: {{ pokemon.name }}</p>
+        <img :src="imageUrl + pokemon.id + '.gif'" alt="Imagem do pokemon">      
+      </span>
+    </div>
+    <button class="quiz-info-button w-50 btn btn-lg poke-secondary"><router-link to="/dashboard/">Back to Dashboard</router-link></button>
   </div>
 </template>
 
@@ -32,7 +40,10 @@
         }).catch((error) => {
           console.log(error)
         })
-      }
+      },
+      redirect() {
+        this.$router.push('Dashboard');
+      },
     },
     created() {
       this.fetchData()

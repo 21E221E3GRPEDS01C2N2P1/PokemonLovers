@@ -58,7 +58,7 @@
         </b-card-header>
         <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
           <b-card-body class="faq-bg">
-            <b-card-text>Pokémon Lovers is a place where you can test your knowledge about the Pokémon world. According to the number of right answers you get in each quiz, you will be rewarded with a certain amount of tokens, depending on the difficulty level of the quiz: the harder the quiz, the more tokens you get per right answer. Your tokens can later be exchanged for Pokémons so you can make your team.</b-card-text>
+            <b-card-text>Pokémon Lovers is a place where you can test your knowledge about the Pokémon world. According to the number of right answers you get in each quiz, you will be rewarded with a certain amount of tokens, depending on the difficulty level of the quiz: the harder the quiz, the more tokens you get per right answer. Your tokens help you reach a higher level: start as a rookie, then become a trainer, and finally reach the master level.</b-card-text>
           </b-card-body>
         </b-collapse>
       </b-card>
@@ -107,18 +107,7 @@ export default {
   name: 'Faq',
   components: {},
     data() {
-      return {
-        text1: `
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-          richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-          brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-          tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-          assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-          wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-          vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
-          synth nesciunt you probably haven't heard of them accusamus labore VHS.
-        `
-      }
+      return {}
     }
 }
 </script>

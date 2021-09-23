@@ -435,11 +435,12 @@ button.poke-secondary{
 }
 
 .faq-icon{
-  display: inline-block;
+  /*display: inline-block;*/
   font-size: 12px;
   vertical-align: middle;
   margin-top: 3px;
   color: #fff;
+  float: right;
 }
 
 .faq-icon:hover{

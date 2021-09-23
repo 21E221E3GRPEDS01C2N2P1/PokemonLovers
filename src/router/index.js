@@ -167,7 +167,7 @@ const routes = [
     }
   },
   {
-    path: '/pokedex',
+    path: '/dashboard/pokedex',
     name: 'Pokedex',
     component: Pokedex,
     meta: {
