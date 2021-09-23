@@ -1,6 +1,10 @@
 <template>
  <div class="container">
-    <p><router-link class="sublinhado" to="/dashboard">Dashboard</router-link> &#8250; <router-link class="sublinhado" to="/profile">{{ user.data.displayName }}</router-link></p>
+    <div class="poke-breadcrumb">
+      <router-link class="sublinhado" to="/dashboard">Dashboard</router-link>
+      <span> &#8250; </span>
+      <router-link class="sublinhado" to="/profile">{{ user.data.displayName }}</router-link>
+    </div>     
     <div class="accordion faq" role="tablist">
       <h1 class="alignment h1 mb-3 fw-normal">Profile</h1>
     </div>
@@ -14,9 +18,6 @@
           <h3 class="h3 fw-normal">{{ user.data.displayName }}</h3>
           <h5 class="h5
            fw-normal">Level: Rookie</h5>
-           <h7 class="h7
-           fw-normal">My Team: {{ $store.state.team }}</h7>
-           <p><router-link class="sublinhado" to="/pokedex">Pokedex</router-link><p/>
            <br/>
           <button class="button-blue-yellow"><router-link to="/dashboard/profile/editprofile"><font-awesome-icon icon="pen" /> Edit Profile</router-link></button>
         </div>

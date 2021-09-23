@@ -1,7 +1,13 @@
 <template>
     <div id="p-quiz" v-cloak>
         <div class="container container-fluid">
-            <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/signup">Sign Up</router-link> &#8250; <router-link class="sublinhado" to="/personalitytest">Quiz - Which Team Do You Belong To?</router-link></p>
+            <div class="poke-breadcrumb">
+                <router-link class="sublinhado" to="/">Home</router-link>
+                <span> &#8250; </span>
+                <router-link class="sublinhado" to="/signup">Sign Up</router-link>
+                <span> &#8250; </span>
+            <router-link class="sublinhado" to="/personalitytest">Quiz - Which Team Do You Belong To?</router-link>
+            </div>
             <div class="row col-8 mx-auto">
                 <span v-if="!startQuiz">
                     <h1 class="h1 mb-3">Quiz: Which League Do You Belong To?</h1>

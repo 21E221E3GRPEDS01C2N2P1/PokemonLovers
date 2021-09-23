@@ -1,6 +1,13 @@
 <template>
     <div class="login container">
       <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/login">Login</router-link> &#8250; <router-link class="sublinhado" to="/login/resetpassword">Forgot My Password</router-link></p>
+      <div class="poke-breadcrumb">
+        <router-link class="sublinhado" to="/">Home</router-link>
+        <span> &#8250; </span>
+        <router-link class="sublinhado" to="/login">Login</router-link>
+        <span> &#8250; </span>
+        <router-link class="sublinhado" to="/login/resetpassword">Forgot My Password</router-link>
+      </div>   
         <div class="form-signin py-5">
             <div class="container-fluid">
                 <div class="container">

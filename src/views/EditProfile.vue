@@ -19,7 +19,11 @@
     </div> -->
 
     <div class="container">
-          <p><router-link class="sublinhado" to="/dashboard/profile">{{ user.data.displayName }}</router-link> &#8250; <router-link class="sublinhado" to="/dashboard/editprofile">Edit Profile</router-link></p>
+          <div class="poke-breadcrumb">
+            <router-link class="sublinhado" to="/dashboard/profile">{{ user.data.displayName }}</router-link>
+            <span> &#8250; </span>
+            <router-link class="sublinhado" to="/dashboard/editprofile">Edit Profile</router-link>
+          </div>
           <div class="accordion faq" role="tablist">
             <h1 class="alignment h1 mb-3 fw-normal">Edit Profile</h1>
             <br/>

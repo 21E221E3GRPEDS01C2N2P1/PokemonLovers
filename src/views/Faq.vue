@@ -1,6 +1,10 @@
 <template>
   <div class="container">
-    <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/faq">F.A.Qs</router-link></p>
+    <div class="poke-breadcrumb">
+      <router-link class="sublinhado" to="/">Home</router-link>
+      <span> &#8250; </span>
+      <router-link class="sublinhado" to="/faq">F.A.Qs</router-link>
+    </div>
           <div class="accordion faq" role="tablist">
           <h1 class="alignment h1 mb-3">F.A.Qs</h1>
           <p class="alignment">If you have any doubts pertaining Pokémon Lovers, check out these usual questions. If you wish further information, <router-link to="/contactus">send us a message</router-link></p>

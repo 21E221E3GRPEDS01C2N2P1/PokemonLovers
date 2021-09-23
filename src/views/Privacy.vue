@@ -1,10 +1,14 @@
 <template>
 <div class="container">
-  <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/privacy">Privacy Policy</router-link></p>
-        <div class="container privacy">
-        <h1 class="h1 mb-3">Privacy Policy</h1>
-        <br/>
-        <p>Last updated: August 26, 2021</p>
+  <div class="poke-breadcrumb">
+    <router-link class="sublinhado" to="/">Home</router-link>
+    <span> &#8250; </span>
+    <router-link class="sublinhado" to="/privacy">Privacy Policy</router-link>
+  </div>      
+  <div class="container privacy">
+    <h1 class="h1 mb-3">Privacy Policy</h1>
+    <br/>
+    <p>Last updated: August 26, 2021</p>
 
 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
 
