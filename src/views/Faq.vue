@@ -103,15 +103,11 @@
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
   name: 'Faq',
-  components: {
-  },
+  components: {},
     data() {
       return {
-          
         text1: `
           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
           richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor

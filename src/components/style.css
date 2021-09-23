@@ -40,13 +40,11 @@ body {
   flex-direction: column;
   min-height: 100%;
   position:relative;
-  /*padding-bottom: 250px;*/
   background: var(--bs-light)
 }
 
 footer {
     width: 100%;
-    /*position: absolute;*/
     bottom: 0;
 }
 
@@ -62,8 +60,6 @@ footer {
   margin-left: 20px;
 }
 
-
-
 .quiz-info-button{
   display: block;
   margin-left: auto;
@@ -73,7 +69,6 @@ footer {
 a {
   text-decoration: none;
   transition: all 100ms linear;
-
 }
 
 [v-cloak] {
@@ -116,7 +111,6 @@ main.poke-main{
 .poke-dashboard{
   min-height: var(--poke-fullscreen);
 }
-
 
 button.poke-primary,
 button.poke-secondary{
@@ -191,7 +185,6 @@ button.poke-secondary{
   color: var(--bs-secondary);
 }
 
-
 .poke-secondary-outlined {
   margin: 10px auto;
   border-radius: 50px;
@@ -209,17 +202,15 @@ button.poke-secondary{
   background: var(--bs-blue);
 }
 
-
-
-
 .card{
-    min-width: 100%;
-    border-radius: 0 15px;
-    padding: 20px;
-    border-radius: 15px;
+  min-width: 100%;
+  border-radius: 0 15px;
+  padding: 20px;
+  border-radius: 15px;
 }
+
 .card-q{
-    min-width: 60%;
+  min-width: 60%;
 }
 
 .card-quiz-dimensions1{
@@ -281,12 +272,12 @@ button.poke-secondary{
 }
 
 .ans-option-btn{
-    min-width: 50%;
-    font-size: 16px;
-    color: #ffffff;
-    align-items: center;
-    cursor: pointer;
-    margin-bottom: 5px;
+  min-width: 50%;
+  font-size: 16px;
+  color: #ffffff;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 5px;
 }
 .answer-section {
   width: 100%;
@@ -304,9 +295,9 @@ button.poke-secondary{
   text-align: center;
 }
 .card-img, .card-img-top {
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
-    height: 350px;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+  height: 350px;
 }
 
 .quiz-btn{
@@ -385,10 +376,6 @@ button.poke-secondary{
   transition: 0.5s;
 }
 
-.button {
-
-}
-
 .a_button {
   color: white;
 }
@@ -443,13 +430,12 @@ button.poke-secondary{
   border-color: #003a70;
 }
 .collapsed > .when-opened,
-    :not(.collapsed) > .when-closed {
-        display: none;
+:not(.collapsed) > .when-closed {
+  display: none;
 }
 
 .faq-icon{
   display: inline-block;
-  float: right;
   font-size: 12px;
   vertical-align: middle;
   margin-top: 3px;
@@ -504,9 +490,6 @@ button.poke-secondary{
   border-radius: 50px;
 }
 
-
-
-
 .enter-btn{
   width: 80%;
   display: block;
@@ -558,8 +541,6 @@ button.poke-secondary{
   width: 60%;
   text-align: justify;
 }
-
-
 
 .sublinhado {
   position: relative;
@@ -619,6 +600,7 @@ button.poke-secondary{
   margin-left: 20px;
   justify-items: start;
 }
+
 .input-group-text {
   background: var(--bs-secondary);
   border-color: #003a70;
@@ -626,8 +608,8 @@ button.poke-secondary{
 }
 
 .input-group-text:hover {
-    cursor: pointer;
-    color: yellow;
+  cursor: pointer;
+  color: yellow;
 }
 .form-control{
   background: #f5f0e6;
@@ -638,6 +620,7 @@ button.poke-secondary{
   border-width: 0;
   transition:all 100ms linear;
 }
+
 .form-control:active,
 .form-control:focus  {
   background: white;
@@ -646,7 +629,6 @@ button.poke-secondary{
   border-width: 0;
 }
 
-/* external css: flickity.css */
 .carousel {
   background: #FAFAFA;
   height: 100%;
@@ -656,27 +638,16 @@ button.poke-secondary{
   width: 100%;
   height: var(--poke-fullscreen);
   margin-right: 0px;
-  /* background: #8C8; */
   border-radius: 0px;
-  /* counter-increment: carousel-cell; */
 }
+
 .carousel-cell.backgrond-slide-1{
   background: url('../assets/1.jpg')no-repeat center center / cover;
 }
+
 .carousel-cell.backgrond-slide-2{
   background: url('../assets/2.jpg')no-repeat center center / cover;
 }
-
-/* cell number 
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
-}
-*/
 
 .flickity-page-dots {
   bottom: 10px;
@@ -715,7 +686,7 @@ button.poke-secondary{
 
 .poke-profile-name{
   text-align: center;
-    font-size: 1.3em;
+  font-size: 1.3em;
 }
 
 .poke-profile-nav .col{
@@ -725,9 +696,9 @@ button.poke-secondary{
   border-radius: 8px;
   transition: all 100ms linear;
 }
+
 .poke-profile-nav .col:hover{
   background: var(--bs-blue);
-
 }
 
 .poke-profile-nav .col p{

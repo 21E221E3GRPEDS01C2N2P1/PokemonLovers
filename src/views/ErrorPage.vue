@@ -10,7 +10,6 @@
     <button @click="$router.push('/')" class="quiz-btn w-30 btn btn-lg poke-secondary">Back to Main Page</button>
   </div>
 </template>
-
 <script>
 export default {
     name: 'ErrorPage',

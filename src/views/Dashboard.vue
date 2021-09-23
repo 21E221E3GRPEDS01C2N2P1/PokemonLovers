@@ -1,7 +1,6 @@
 <template>
   <div class="container-fluid m-0 p-0">
     <div class="row m-0 p-0">
-
       <!-- DASHBOARD -->
       <div class="col order-2 order-sm-1 poke-dashboard">
         <div class="container">
@@ -10,7 +9,6 @@
             <span> &#8250; </span>
             <router-link class="sublinhado" to="/dashboard">Dashboard</router-link>
           </div>
-
           <div class="row m-0 py-5 dashboard-columns">
             <div class="accordion faq" role="tablist">
               <h3 class="alignment h3 mb-3">Profile</h3>
@@ -18,7 +16,6 @@
             </div>
             <br/>
           </div>
-
           <div class="row dashboard-columns">
             <div class="col-lg-4">
               <div class="poke-card">
@@ -62,7 +59,6 @@
           </div>
         </div>
       </div>
-
       <!-- // PERFIL -->
       <div class="poke-profile-wrap col-lg-3 col-md-4 col-sm-5 order-1 order-sm-2 p-0">
         <div class="poke-profile">
@@ -72,7 +68,6 @@
                 <img class="user-icon" src="../assets/user-icon.svg">
               </span>
               <h3 class="poke-profile-name h3 mb-3">{{user.data.displayName}}</h3>
-
               <div class="poke-profile-nav">
                 <div class="row m-0 p-0">
                   <div class="col">
@@ -86,7 +81,6 @@
                     <span>Level</span>
                   </div>
                 </div>
-
                 <div class="row m-0 p-0">
                     <router-link class="col dash-links" to="/dashboard/profile">
                     <p><font-awesome-icon icon="user" /></p>
@@ -101,12 +95,10 @@
               <div class="py-5 text-center">
                   <router-link class="poke-secondary-outlined dash-links" to="/dashboard/pokedex"><font-awesome-icon icon="star" />Pokedex</router-link>
               </div>
-              
             </div>
           </div>
         </div>
       </div>
-      
     </div>
   </div>
 </template>
