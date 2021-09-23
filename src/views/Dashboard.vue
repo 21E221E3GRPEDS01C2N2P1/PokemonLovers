@@ -80,7 +80,9 @@
                     <span>My tokens</span>
                   </div>
                   <div class="col">
-                    <p class="mb-3">Rookie</p>
+                    <p class="mb-3" v-if="$store.state.tokens >= 0 && $store.state.tokens < 100"> Rookie</p>
+                    <p class="mb-3" v-else-if="$store.state.tokens >= 100 && $store.state.tokens < 200"> Trainer</p>
+                    <p class="mb-3" v-else>Master</p>
                     <span>Level</span>
                   </div>
                 </div>

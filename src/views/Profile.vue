@@ -12,8 +12,12 @@
         </div>
         <div class="profile-container-content-text">
           <h3 class="h3">{{ user.data.displayName }}</h3>
-          <h5 class="h5
-          ">Level: Rookie</h5>
+          <h5 class="h5">
+            Level: 
+            <span v-if="$store.state.tokens >= 0 && $store.state.tokens < 100"> Rookie</span>
+            <span v-else-if="$store.state.tokens >= 100 && $store.state.tokens < 200"> Trainer</span>
+            <span v-else>Master</span>
+          </h5>
            <h7 class="h7
           ">My Team: {{ $store.state.team }}</h7>
            <br/>
