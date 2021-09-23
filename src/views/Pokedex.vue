@@ -42,7 +42,6 @@
       this.fetchData()
     },
     mounted() {
-
     }
   }
 </script>
@@ -56,7 +55,6 @@
   width: 100%;
   max-width: 510px;
 }
-
 .cardpokedex {
   height: 150px;
   background-color: #efefef;

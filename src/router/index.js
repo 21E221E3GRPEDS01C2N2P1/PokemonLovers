@@ -10,6 +10,9 @@ import ResetPassword from '../views/ResetPassword.vue'
 import PersonalityTest from '../views/PersonalityTest.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Profile from '../views/Profile.vue'
+import Pokedex from '../views/Pokedex.vue'
+import EditProfile from '../views/EditProfile.vue'
+import SearchProfile from '../views/SearchProfile.vue'
 import MockTestEasy from '../views/MockTestEasy.vue'
 import MockTestMedium from '../views/MockTestMedium.vue'
 import MockTestHard from '../views/MockTestHard.vue'
@@ -68,7 +71,7 @@ const routes = [
     }
   },
   {
-    path: '/resetpassword',
+    path: '/login/resetpassword',
     name: 'ResetPassword',
     component: ResetPassword,
     meta: {
@@ -100,7 +103,7 @@ const routes = [
     }
   },
   {
-    path: '/profile',
+    path: '/dashboard/profile',
     name: 'Profile',
     component: Profile,
     meta: {
@@ -108,7 +111,31 @@ const routes = [
     }
   },
   {
-    path: '/mocktesteasy',
+    path: '/dashboard/pokedex',
+    name: 'Pokedex',
+    component: Pokedex,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/dashboard/profile/editprofile',
+    name: 'EditProfile',
+    component: EditProfile,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/dashboard/profile/searchprofile',
+    name: 'SearchProfile',
+    component: SearchProfile,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/dashboard/mocktesteasy',
     name: 'MockTestEasy',
     component: MockTestEasy,
     meta: {
@@ -116,7 +143,7 @@ const routes = [
     }
   },
   {
-    path: '/mocktestmedium',
+    path: '/dashboard/mocktestmedium',
     name: 'MockTestmedium',
     component: MockTestMedium,
     meta: {
@@ -124,7 +151,7 @@ const routes = [
     }
   },
   {
-    path: '/mocktesthard',
+    path: '/dashboard/mocktesthard',
     name: 'MockTestHard',
     component: MockTestHard,
     meta: {

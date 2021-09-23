@@ -1,13 +1,35 @@
 <template>
-  <div>
-    <!--<p
-      v-for="(value, index) in content"
-      :id="`content-${index}`"
-      :key="index"
-      contenteditable
-      @input="event => onInput(event, index)"
-      @keyup.delete="onRemove(index)"
-    />-->
+ <div class="container">
+    <p><router-link class="sublinhado" to="/dashboard">Dashboard</router-link> &#8250; <router-link class="sublinhado" to="/profile">{{ user.data.displayName }}</router-link></p>
+    <div class="accordion faq" role="tablist">
+      <h1 class="alignment h1 mb-3">Profile</h1>
+    </div>
+    <div class="profile-container">
+      <div class="profile-container-content">
+        <div class="profile-container-content-avatar">
+          <h3 class="h6 profile-container-status">Mestre Pokémon</h3>
+          <img class="user-icon" src="../assets/user-icon.svg" />
+        </div>
+        <div class="profile-container-content-text">
+          <h3 class="h3">{{ user.data.displayName }}</h3>
+          <h5 class="h5
+          ">Level: Rookie</h5>
+           <h7 class="h7
+          ">My Team: {{ $store.state.team }}</h7>
+           <br/>
+          <button class="button-blue-yellow"><router-link to="/dashboard/profile/editprofile"><font-awesome-icon icon="pen" /> Edit Profile</router-link></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-3 alignment">
+          <h3 class="h5 mb-3">Mestre Pokémon</h3>
+          <img class="user-icon" src="../assets/user-icon.svg" />
+          <h3 class="h3 mb-3">{{ user.data.displayName }}</h3>
+          <h5 class="h5 mb-3">Level: Rookie</h5>
+          <br />
+          <button class="button-blue-yellow"><router-link class="dash-links" to="/editprofile"><font-awesome-icon icon="pen" /> Edit Profile</router-link></button>
+    </div> -->
   </div>
 </template>
 
@@ -15,10 +37,15 @@
 //import {fb} from '../firebase';
 //import firebase from "firebase/app";
 //import "firebase/auth";
+import { mapGetters } from "vuex";
 
 export default {
-  name: 'Profile',
-  components: {
+  name: "Profile",
+  components: {},
+  computed: {
+      ...mapGetters({
+      user: "user"
+  }),
   },
   data() {
     return {
@@ -47,11 +74,11 @@ export default {
         el.innerText = c.value;
       });
     },*/
-      /*created(){
+    /*created(){
         let user = firebase.auth().currentUser;
         this.email = user.email;
   }*/
-  /*getUserProfile() {
+    /*getUserProfile() {
   // [START auth_get_user_profile]
   const user = firebase.auth().currentUser;
   if (user !== null) {
