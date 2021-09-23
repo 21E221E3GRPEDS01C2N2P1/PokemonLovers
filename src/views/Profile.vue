@@ -2,24 +2,21 @@
  <div class="container">
     <p><router-link class="sublinhado" to="/dashboard">Dashboard</router-link> &#8250; <router-link class="sublinhado" to="/profile">{{ user.data.displayName }}</router-link></p>
     <div class="accordion faq" role="tablist">
-      <h1 class="alignment h1 mb-3">Profile</h1>
+      <h1 class="alignment h1 mb-3 fw-normal">Profile</h1>
     </div>
     <div class="profile-container">
       <div class="profile-container-content">
         <div class="profile-container-content-avatar">
-          <h3 class="h6 profile-container-status">Mestre Pokémon</h3>
+          <h3 class="h6 fw-normal profile-container-status">Mestre Pokémon</h3>
           <img class="user-icon" src="../assets/user-icon.svg" />
         </div>
         <div class="profile-container-content-text">
-          <h3 class="h3">{{ user.data.displayName }}</h3>
-          <h5 class="h5">
-            Level: 
-            <span v-if="$store.state.tokens >= 0 && $store.state.tokens < 100"> Rookie</span>
-            <span v-else-if="$store.state.tokens >= 100 && $store.state.tokens < 200"> Trainer</span>
-            <span v-else>Master</span>
-          </h5>
+          <h3 class="h3 fw-normal">{{ user.data.displayName }}</h3>
+          <h5 class="h5
+           fw-normal">Level: Rookie</h5>
            <h7 class="h7
-          ">My Team: {{ $store.state.team }}</h7>
+           fw-normal">My Team: {{ $store.state.team }}</h7>
+           <p><router-link class="sublinhado" to="/pokedex">Pokedex</router-link><p/>
            <br/>
           <button class="button-blue-yellow"><router-link to="/dashboard/profile/editprofile"><font-awesome-icon icon="pen" /> Edit Profile</router-link></button>
         </div>
@@ -27,10 +24,10 @@
     </div>
 
     <!-- <div class="col-md-3 alignment">
-          <h3 class="h5 mb-3">Mestre Pokémon</h3>
+          <h3 class="h5 mb-3 fw-normal">Mestre Pokémon</h3>
           <img class="user-icon" src="../assets/user-icon.svg" />
-          <h3 class="h3 mb-3">{{ user.data.displayName }}</h3>
-          <h5 class="h5 mb-3">Level: Rookie</h5>
+          <h3 class="h3 mb-3 fw-normal">{{ user.data.displayName }}</h3>
+          <h5 class="h5 mb-3 fw-normal">Level: Rookie</h5>
           <br />
           <button class="button-blue-yellow"><router-link class="dash-links" to="/editprofile"><font-awesome-icon icon="pen" /> Edit Profile</router-link></button>
     </div> -->
@@ -42,7 +39,6 @@
 //import firebase from "firebase/app";
 //import "firebase/auth";
 import { mapGetters } from "vuex";
-
 export default {
   name: "Profile",
   components: {},
@@ -92,7 +88,6 @@ export default {
     const username = user.username;
     //const photoURL = user.photoURL;
     //const emailVerified = user.emailVerified;
-
     // The user's ID, unique to the Firebase project. Do NOT use
     // this value to authenticate with your backend server, if
     // you have one. Use User.getToken() instead.

@@ -17,6 +17,7 @@ import MockTestEasy from '../views/MockTestEasy.vue'
 import MockTestMedium from '../views/MockTestMedium.vue'
 import MockTestHard from '../views/MockTestHard.vue'
 import ErrorPage from '../views/ErrorPage.vue'
+import Pokedex from '../views/Pokedex.vue'
 import firebase from "firebase/app";
 
 Vue.use(VueRouter)
@@ -166,6 +167,14 @@ const routes = [
       requiresAuth: false
     }
   },
+  {
+    path: '/pokedex',
+    name: 'Pokedex',
+    component: Pokedex,
+    meta: {
+      requiresAuth: true
+    }
+  }
 ]
 
 const router = new VueRouter({
