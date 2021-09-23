@@ -1,6 +1,12 @@
 <template>
 <div class="container container-fluid">
-    <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/dashboard">Dashboard</router-link> &#8250; <router-link class="sublinhado" to="/dashboard/mocktesteasy">PokéQuiz</router-link></p>
+    <div class="poke-breadcrumb">
+      <router-link class="sublinhado" to="/">Home</router-link>
+      <span> &#8250; </span>
+      <router-link class="sublinhado" to="/dashboard">Dashboard</router-link>
+      <span> &#8250; </span>
+      <router-link class="sublinhado" to="/dashboard/mocktesteasy">PokéQuiz</router-link>
+    </div>
 	<div class="d-flex justify-content-center">
     <div v-if="showScore">
         <b-card title="Results" class="card-quiz-dimensions1">

@@ -1,6 +1,10 @@
 <template>
  <div class="container">
-    <p><router-link class="sublinhado" to="/dashboard">Dashboard</router-link> &#8250; <router-link class="sublinhado" to="/dashboard/profile/searchprofile">Search Profile</router-link></p>
+   <div class="poke-breadcrumb">
+      <router-link class="sublinhado" to="/dashboard">Dashboard</router-link>
+      <span> &#8250; </span>
+      <router-link class="sublinhado" to="/dashboard/profile/searchprofile">Search Profile</router-link>
+    </div>   
     <div class="accordion faq" role="tablist">
       <h1 class="alignment h1 mb-3 fw-normal">Search Profile</h1>
     </div>

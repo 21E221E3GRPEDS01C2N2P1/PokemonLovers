@@ -3,7 +3,11 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
-                    <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/contactus">Contact Us</router-link></p>
+                    <div class="poke-breadcrumb">
+                        <router-link class="sublinhado" to="/">Home</router-link>
+                        <span> &#8250; </span>
+                        <router-link class="sublinhado" to="/contactus">Contact Us</router-link>
+                    </div>
                   <div v-if="error" class="alert alert-danger">{{error}}</div>
                     <form class="col-8 mx-auto" action="" @submit.prevent="onFormSubmit" method="POST" autocomplete="off">
                         <h1 class="h3 mb-3 alignment">Get In Touch</h1>

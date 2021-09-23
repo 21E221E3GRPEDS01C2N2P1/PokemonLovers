@@ -8,7 +8,7 @@
           <div class="poke-breadcrumb">
             <router-link class="sublinhado" to="/">Home</router-link>
             <span> &#8250; </span>
-            <router-link class="sublinhado" to="/dashboard">Sign Up</router-link>
+            <router-link class="sublinhado" to="/dashboard">Dashboard</router-link>
           </div>
 
           <div class="row m-0 py-5 dashboard-columns">

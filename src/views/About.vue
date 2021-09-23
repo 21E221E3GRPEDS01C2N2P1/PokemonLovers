@@ -1,7 +1,11 @@
 <template>
 
   <div class="container">
-    <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/about">About</router-link></p>
+    <div class="poke-breadcrumb">
+      <router-link class="sublinhado" to="/">Home</router-link>
+      <span> &#8250; </span>
+      <router-link class="sublinhado" to="/about">About</router-link>
+    </div>
     <div class=" container container-fluid mb-5">
       <div class="row">
         <div class="col-md-5">
