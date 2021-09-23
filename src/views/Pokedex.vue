@@ -9,8 +9,10 @@
 
 <script>
   export default {
-    name: "Pokedex",
-    components: {},
+    props: [
+        'imageUrl',
+        'apiUrl'
+    ],
     data: () => {
       return {
         pokemonList: [],
@@ -62,6 +64,7 @@
   box-shadow: 0 4px 8px 0 var(--bs-secondary);
   margin: 8px;
 }
+
 .cardpokedex:hover {
   box-shadow: 0 4px 8px 0 var(--bs-secondary);
 }
