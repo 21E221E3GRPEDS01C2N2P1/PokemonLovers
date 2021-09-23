@@ -6,7 +6,7 @@
                 <span> &#8250; </span>
                 <router-link class="sublinhado" to="/signup">Sign Up</router-link>
                 <span> &#8250; </span>
-            <router-link class="sublinhado" to="/personalitytest">Quiz - Which Team Do You Belong To?</router-link>
+                <router-link class="sublinhado" to="/personalitytest">Quiz - Which Team Do You Belong To?</router-link>
             </div>
             <div class="row col-8 mx-auto">
                 <span v-if="!startQuiz">
@@ -66,76 +66,41 @@ export default {
             quiz: personalitytest,
             questionIndex: 0,
             startQuiz: false,
-            userResponses: Array(),
-            /*form: {
-                team: ""
-            },*/
+            userResponses: Array()
         }
     },
     methods:{
-            startQuizFunc(){
-                this.startQuiz = true;
-            },
-            next: function() {
-                this.questionIndex++;
-                console.log(this.userResponses);
-            },
-            prev: function() {
-                this.questionIndex--;
-            },
-            score: function() {
-                var modeMap = {};
-                var maxEl = this.userResponses[0],
-                    maxCount = 1;
-                for (var i = 0; i < this.userResponses.length; i++) {
-                    var el = this.userResponses[i];
-                    if (modeMap[el] == null)
-                        modeMap[el] = 1;
-                    else
-                        modeMap[el]++;
-                    if (modeMap[el] > maxCount) {
-                        maxEl = el;
-                        maxCount = modeMap[el];
-                    }
-                }
-                return maxEl;
-            },
-            redirect() {
-                this.$store.commit('userTeam',this.score())
-                this.$router.push('Login');
-            },
-            /*openStorage () {
-                return JSON.parse(localStorage.getItem('form'))
-            },
-            saveStorage (form) {
-                localStorage.setItem('form', JSON.stringify(form))
-            },
-            updateForm (input, value) {
-                this.form[input] = value
-
-                let storedForm = this.openStorage()
-                if (!storedForm) storedForm = {}
-                storedForm[input] = value
-                this.saveStorage(storedForm)
-            }
+        startQuizFunc(){
+            this.startQuiz = true;
         },
-        created () {
-            const storedForm = this.openStorage()
-                if (storedForm) {
-                    this.form = {
-                        ...this.form,
-                        ...storedForm
-                    }
+        next: function() {
+            this.questionIndex++;
+            console.log(this.userResponses);
+        },
+        prev: function() {
+            this.questionIndex--;
+        },
+        score: function() {
+            var modeMap = {};
+            var maxEl = this.userResponses[0],
+                maxCount = 1;
+            for (var i = 0; i < this.userResponses.length; i++) {
+                var el = this.userResponses[i];
+                if (modeMap[el] == null)
+                    modeMap[el] = 1;
+                else
+                    modeMap[el]++;
+                if (modeMap[el] > maxCount) {
+                    maxEl = el;
+                    maxCount = modeMap[el];
                 }
-        }*/
-        /*watch: {
-            input: function () {
-                if (isLocalStorage()) {
-                    localStorage.setItem('storedData', form.team)
-                    console.log(form.team)
-                }
-        }
-    }*/
+            }
+            return maxEl;
+        },
+        redirect() {
+            this.$store.commit('userTeam',this.score())
+            this.$router.push('Login');
+        },
     }   
 }
 </script>

@@ -20,13 +20,11 @@
                                 <input type="password" class="form-control" id="password" name= "password" placeholder="Password" required v-model="form.password">
                                 <label for="floatingPassword">Password</label>
                             </div>
-        
                             <div class="checkbox mb-3 form-spacing">
                                 <label>
                                     <input type="checkbox" value="remember-me"> Remember me
                                 </label>
                             </div>
-
                             <div class="row form-spacing2">
                               <div class="col-md-12 my-2">
                                 <button class="btn btn-lg poke-secondary enter-btn" @click="submit" type="submit">Sign in</button>
@@ -45,7 +43,6 @@
                     </div>
                 </div>
             </div>
-    
         </div>
     </div>
 </template>
@@ -55,8 +52,7 @@ import firebase from "firebase";
 
 export default {
   name: 'Login',
-  components: {
-  },
+  components: {},
   data() {
     return {
       form: {
