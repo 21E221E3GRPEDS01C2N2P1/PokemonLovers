@@ -1,7 +1,9 @@
 <template>
   <div>
     <Header />
-    <router-view></router-view>
+    <main class="poke-main">
+      <router-view></router-view>
+    </main>
     <Footer />
   </div>
 </template>

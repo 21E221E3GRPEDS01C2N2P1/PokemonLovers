@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-    <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/dashboard">Dashboard</router-link> &#8250; <router-link class="sublinhado" to="/mocktestmedium">PokéQuiz</router-link></p>
+    <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/dashboard">Dashboard</router-link> &#8250; <router-link class="sublinhado" to="/dashboard/mocktestmedium">PokéQuiz</router-link></p>
 	<div class="d-flex justify-content-center">
     <div v-if="showScore">
         <b-card title="Results" class="card-quiz-dimensions1">
@@ -16,7 +16,7 @@
 				<h2 class="alignment h2 mb-3 fw-normal">Congrats! You get {{tokens}} tokens!</h2>
 				<br/>
 			</div>
-			<button @click="$router.push('Dashboard')" class="quiz-btn w-50 btn poke-secondary">Go Back to My Dashboard</button>
+			<button @click="redirectDashboard()" class="quiz-btn w-50 btn poke-secondary">Go Back to My Dashboard</button>
         </b-card>
     </div>
     <div class="card-q" v-else>
@@ -93,6 +93,7 @@ export default {
             else{
                 this.showScore = true;
 				this.showTokens = true;
+                this.$store.commit('addTokens',this.tokens)
             }
         },
         countDownTimer() {
@@ -105,7 +106,10 @@ export default {
                 else{
                     this.handleAnswerClick(false)
                 }
-            }
+            },
+        redirectDashboard() {
+          this.$router.push('/dashboard');
+        },
     },
 }
 

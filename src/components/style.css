@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@700&display=swap');
+
 :root {
-    --bs-blue: #0d6efd;
+    --bs-blue: #3D7CDA;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
     --bs-pink: #d63384;
@@ -18,11 +20,13 @@
     --bs-info: #0dcaf0;
     --bs-warning: #ffc107;
     --bs-danger: #f65d4f;
-    --bs-light: #f8f9fa;
+    --bs-light: #FBF9F6;
     --bs-dark: #212529;
-    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --font-regular: 'Open Sans', sans-serif;
+    --font-bold: 'Raleway', sans-serif;
+    --poke-fullscreen: calc(100vh - 196px);
   }
 
 html {
@@ -31,17 +35,18 @@ html {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    position:relative;
-    padding-bottom: 250px; /* TODO */
+  font-family: var(--font-regular);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position:relative;
+  /*padding-bottom: 250px;*/
+  background: var(--bs-light)
 }
 
 footer {
-    margin-top: auto;
     width: 100%;
-    position: absolute;
+    /*position: absolute;*/
     bottom: 0;
 }
 
@@ -57,6 +62,8 @@ footer {
   margin-left: 20px;
 }
 
+
+
 .quiz-info-button{
   display: block;
   margin-left: auto;
@@ -65,12 +72,60 @@ footer {
 
 a {
   text-decoration: none;
+  transition: all 100ms linear;
+
 }
 
 [v-cloak] {
   display: none;
 }
 
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--font-bold);
+  color:var(--bs-secondary)
+}
+.poke-bg-portrait-1{background:url('../assets/squirtle.jpg')no-repeat center center / cover ;}
+.poke-bg-portrait-2{background:url('../assets/pikachu.jpg')no-repeat center center / cover ;}
+.poke-bg-portrait-3{background:url('../assets/charmander.jpg')no-repeat center center / cover ;}
+.poke-bg-portrait-4{background:url('../assets/bulbasaur.jpg')no-repeat center center / cover ;}
+.poke-bg-portrait-1,
+.poke-bg-portrait-2,
+.poke-bg-portrait-3,
+.poke-bg-portrait-4{
+  border-radius:12px;
+}
+.poke-breadcrumb{
+  padding: 40px;
+  font-family: var(--font-regular);
+  text-align: left;
+  color:var(--bs-primary)
+}
+.poke-content-aligner{
+  display:flex;
+  flex-direction: column;
+  height: calc(100vh - 180px);
+  justify-content: center;
+  text-align: start;
+}
+.poke-cover{
+  height: var(--poke-fullscreen);
+}
+main.poke-main{
+  min-height: var(--poke-fullscreen);
+}
+.poke-dashboard{
+  min-height: var(--poke-fullscreen);
+}
+
+
+button.poke-primary,
+button.poke-secondary{
+  margin: 10px auto;
+  border-radius:50px;
+  padding: 8px 16px;
+  transition: all 100ms linear;
+  font-family: var(--font-bold);
+}
   .poke-primary{
     background-color: var(--bs-primary);
     color: var(--bs-white)
@@ -80,8 +135,25 @@ a {
     background-color: var(--bs-secondary);
     color: var(--bs-white)
   }
+  .poke-secondary:hover,
+  .poke-primary:hover{
+    color: var(--bs-warning)
+  }
 
   .poke-secondary:hover{
+    color: var(--bs-warning)
+  }
+
+  .poke-secondary a{
+    background-color: var(--bs-secondary);
+    color: var(--bs-white)
+  }
+
+  .poke-secondary:hover{
+    color: var(--bs-warning)
+  }
+
+  .poke-secondary a:hover{
     color: var(--bs-warning)
   }
 
@@ -101,8 +173,49 @@ a {
     color: var(--bs-warning)
   }
 
+.poke-primary-outlined {
+  margin: 10px auto;
+  border-radius: 50px;
+  padding: 16px 30px;
+  transition: all 100ms linear;
+  font-family: var(--font-bold);
+  background: transparent;
+  box-shadow: 0px 0px 0px 4px var(--bs-light) inset;
+  color: var(--bs-light);
+  font-size: 1.1em;
+  transition: all 100ms linear;
+}
+
+.poke-primary-outlined:hover {
+  background: var(--bs-light);
+  color: var(--bs-secondary);
+}
+
+
+.poke-secondary-outlined {
+  margin: 10px auto;
+  border-radius: 50px;
+  padding: 16px 30px;
+  transition: all 100ms linear;
+  font-family: var(--font-bold);
+  background: transparent;
+  box-shadow: 0px 0px 0px 4px var(--bs-blue) inset;
+  color: var(--bs-light);
+  font-size: 1.1em;
+  transition: all 100ms linear;
+}
+
+.poke-secondary-outlined:hover {
+  background: var(--bs-blue);
+}
+
+
+
+
 .card{
     min-width: 100%;
+    border-radius: 0 15px;
+    padding: 20px;
     border-radius: 15px;
 }
 .card-q{
@@ -125,6 +238,46 @@ a {
 
 .countdown{
   font-size: 40px;
+}
+
+.poke-card-top {
+  background: var(--bs-white);
+  padding: 30px 0 50px 0;
+  border-radius: 12px;
+}
+
+.poke-card-bottom{
+  background: var(--bs-primary);
+  padding: 55px 0;
+  border-radius: 0 0 12px 12px;
+}
+
+.poke-card-divider{
+  background: var(--bs-secondary);
+  height: 8px;
+  width: 100%;
+  display: block;
+}
+
+.poke-card-divider-button{
+  width: 40px;
+  height: 40px;
+  display: block;
+  background: var(--bs-light);
+  position: relative;
+  border-radius: 30px;
+  box-shadow: 0px 0px 0px 7px var(--bs-secondary);
+  margin: 0 auto;
+  transform: translateY(-16px);
+}
+
+.poke-card{
+  box-shadow: 0px 0px 0px 0px #f5f0e6;
+  transition: all 100ms linear;
+}
+.poke-card:hover{
+  box-shadow: 0px 0px 72px 0px #f5f0e6;
+  transform: scale(1.1, 1.1);
 }
 
 .ans-option-btn{
@@ -178,6 +331,79 @@ a {
   justify-content: center;
   margin: auto;
   height: auto;
+}
+	
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 var(--bs-secondary);
+  margin: 8px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px 0 var(--bs-secondary);
+}
+
+.card img {
+  width: 100%;
+  align-self: center;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+}
+
+.container {
+  padding: 0 16px;
+  text-align: center;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background: var(--bs-secondary);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.button {
+
+}
+
+.a_button {
+  color: white;
+}
+
+.a_button:hover {
+  color: white;
+}
+
+.button:hover {
+  background-color: var(--bs-primary);
+}
+
+.row {
+  justify-content: center;
+  margin-top: 5%;
 }
 
 .img-404{
@@ -234,6 +460,39 @@ a {
   color: #ffc107;
 }
 
+.button-blue-yellow {
+  width: max-content; 
+  text-align: left;
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+  border-radius: 5px;
+}
+
+.button-blue-yellow a {
+  color: white;
+  margin: 3px;
+}
+
+.button-blue-yellow:hover{
+  background-color: var(--bs-secondary);
+  border-color: #003a70;
+  color: #ffc107;
+}
+
+.button-blue-yellow a:hover {
+  color: #ffc107;
+}
+
+.button-blue-yellow:focus{
+  background-color: #003a70;
+  border-color: #003a70;
+}
+
+.button-blue-yellow:visited{
+  background-color: #003a70;
+  border-color: #003a70;
+}
+
 .textarea {
   width: 70%;
   padding-top: 20px;
@@ -245,13 +504,8 @@ a {
   border-radius: 50px;
 }
 
-.user-icon {
-  width: 80%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+
+
 
 .enter-btn{
   width: 80%;
@@ -305,13 +559,7 @@ a {
   text-align: justify;
 }
 
-.dash-links{
-  color: #000000;
-}
 
-.dash-links:hover{
-  color: #003a70;
-}
 
 .sublinhado {
   position: relative;
@@ -341,5 +589,162 @@ a {
   transform: scaleX(1);
 }
 
+.pre-formatted {
+  white-space: pre;
+}
 
-	
+.profile-container {
+  margin-top: 5rem;
+}
+
+.profile-container-status {
+  text-align: center;
+  color: #F65D4F;
+  
+}
+
+.profile-container-content {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-container-content-avatar {
+  min-width: 10rem;
+  max-width: 10rem;
+}
+
+.profile-container-content-text {
+  display: grid;
+  align-content: center;
+  margin-left: 20px;
+  justify-items: start;
+}
+.input-group-text {
+  background: var(--bs-secondary);
+  border-color: #003a70;
+  color: white;
+}
+
+.input-group-text:hover {
+    cursor: pointer;
+    color: yellow;
+}
+.form-control{
+  background: #f5f0e6;
+  margin:30px 0;
+  border-radius:12px;
+  box-shadow: 0 0 0 0 #6F828C44;
+  border-color: transparent;
+  border-width: 0;
+  transition:all 100ms linear;
+}
+.form-control:active,
+.form-control:focus  {
+  background: white;
+  box-shadow: 0px 0px 72px 0px #f5f0e6;
+  border-color: transparent;
+  border-width: 0;
+}
+
+/* external css: flickity.css */
+.carousel {
+  background: #FAFAFA;
+  height: 100%;
+}
+
+.carousel-cell {
+  width: 100%;
+  height: var(--poke-fullscreen);
+  margin-right: 0px;
+  /* background: #8C8; */
+  border-radius: 0px;
+  /* counter-increment: carousel-cell; */
+}
+.carousel-cell.backgrond-slide-1{
+  background: url('../assets/1.jpg')no-repeat center center / cover;
+}
+.carousel-cell.backgrond-slide-2{
+  background: url('../assets/2.jpg')no-repeat center center / cover;
+}
+
+/* cell number 
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+*/
+
+.flickity-page-dots {
+  bottom: 10px;
+}
+.poke-profile-wrap{
+  min-width: 300px;
+}
+.poke-profile{
+  background: var(--bs-secondary);
+  color: var(--bs-light);
+}
+
+.poke-profile h3,
+.poke-profile h1,
+.poke-profile p,
+.poke-profile a{
+  color: var(--bs-light);
+}
+
+.poke-profile-avatar-background{
+  display: block;
+  padding: 50px 0;
+  margin: 50px 0 23px 0;
+  background: url('../assets/bg-profile.png')no-repeat center center / contain;
+}
+
+.user-icon {
+  max-width: 140px;
+  display: block;
+  margin: 0 auto;
+  padding: 18px;
+  background: transparent;
+  border-radius: 70px;
+  box-shadow: 0px 0px 0px 4px var(--bs-primary);
+}
+
+.poke-profile-name{
+  text-align: center;
+    font-size: 1.3em;
+}
+
+.poke-profile-nav .col{
+  background: #00000022;
+  padding: 10px 10px;
+  margin: 12px;
+  border-radius: 8px;
+  transition: all 100ms linear;
+}
+.poke-profile-nav .col:hover{
+  background: var(--bs-blue);
+
+}
+
+.poke-profile-nav .col p{
+  font-family: var(--font-bold);
+  color: var(--bs-light);
+  font-size: 1.4em;
+}
+
+.poke-profile-nav .col span{
+  font-family: var(--font-bold);
+  color: #fbf9f685;
+  font-size: 0.9em;
+}
+
+@media (min-width: 576px){
+  .poke-profile{
+    height: 100%;
+    background: var(--bs-secondary);
+  }
+}

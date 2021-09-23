@@ -5,7 +5,7 @@ import firebase from "firebase/app";
 import 'firebase/firestore';
 import store from './store/store';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faChevronUp, faPen, faPenFancy } from '@fortawesome/free-solid-svg-icons'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faCog } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
@@ -13,6 +13,9 @@ import { faHashtag } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faBolt } from '@fortawesome/free-solid-svg-icons'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import {faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faCoins } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -21,6 +24,7 @@ import 'bootstrap-vue/dist/bootstrap-vue-icons.min.css'
 
 import './components/style.css';
 import router from './router'
+
 
 Vue.config.productionTip = false;
 
@@ -35,6 +39,11 @@ library.add(faHashtag)
 library.add(faUser)
 library.add(faBolt)
 library.add(faAngleRight)
+library.add(faPen)
+library.add(faPenFancy)
+library.add(faSearch)
+library.add(faStar)
+library.add(faCoins)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 const firebaseConfig = {

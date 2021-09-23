@@ -2,11 +2,17 @@
     <div id="signup-form" class="form-signin">
         <div class="container-fluid">
             <div class="container">
-                <div class="row">
-                  <p><router-link class="sublinhado" to="/">Home</router-link> &#8250; <router-link class="sublinhado" to="/signup">Sign Up</router-link></p>
-                  <div v-if="error" class="alert alert-danger">{{error}}</div>
-                    <form class="col-8 mx-auto" action="" @submit.prevent="submit" method="POST">
-                        <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+                <div class="poke-breadcrumb">
+                    <router-link class="sublinhado" to="/">Home</router-link>
+                    <span> &#8250; </span>
+                    <router-link class="sublinhado" to="/signup">Sign Up</router-link>
+                  </div>
+                <div class="row m-0 py-5">
+                  <div id="errorMessage" v-if="error" class="alert alert-danger">
+                    <div class="pre-formatted">{{error}}</div>
+                    </div>
+                    <form class="col-lg-6 mx-auto" action="" @submit.prevent="submit" method="POST" autocomplete="off">
+                        <h1 class="h3 mb-3">Sign Up</h1>
                             <div class="form-floating form-spacing">
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Your name" value required autofocus v-model="form.name">
                                 <label for="email">Name</label>
@@ -34,6 +40,7 @@
                             <br/>
                             <p class="alignment">Already have an account? <router-link to="/login">Sign in here</router-link></p>
                     </form>
+                    <div class="col-lg-3 poke-bg-portrait-2"></div>
                 </div>
             </div>
         </div>
@@ -62,7 +69,23 @@ export default {
   },
   methods: {
     submit() {
-      firebase
+      if (!this.validUsername(this.form.username)) {
+        let username_error = `          
+            The username must abide to the following criteria:\n
+            - Number of characters must be at least 8, and up to 20 characters long
+            - Must only contain alphanumeric characters, underscore and dot
+            - Underscore and dot can't be at the end or start of a username
+            - Underscore and dot can't be next to each other (e.g user_.name)
+            - Underscore or dot can't be used two or more times in a row (e.g user__name / user..name)
+            `
+        ;
+        this.error = username_error;
+        this.form.name = ''
+        this.form.email = ''
+        this.form.username = ''
+        this.form.password = ''
+      } else {
+        firebase
         .auth()
         .createUserWithEmailAndPassword(this.form.email, this.form.password)
         .then(data => {
@@ -75,7 +98,16 @@ export default {
         })
         .catch(err => {
           this.error = err.message;
+          this.form.name = ''
+          this.form.email = ''
+          this.form.username = ''
+          this.form.password = ''
         });
+      }
+    },
+    validUsername: function (username) {
+      var re = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
+      return re.test(username);
     },
   }
 }
