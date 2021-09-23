@@ -11,13 +11,19 @@
     <div class="profile-container">
       <div class="profile-container-content">
         <div class="profile-container-content-avatar">
-          <h3 class="h6 fw-normal profile-container-status">Mestre Pokémon</h3>
+          <h3 class="h6 fw-normal profile-container-status">Pokémon Master</h3>
           <img class="user-icon" src="../assets/user-icon.svg" />
         </div>
         <div class="profile-container-content-text">
           <h3 class="h3 fw-normal">{{ user.data.displayName }}</h3>
-          <h5 class="h5
-           fw-normal">Level: Rookie</h5>
+          <h5 class="h5 fw-normal">
+             Level: 
+             <span v-if="$store.state.tokens >= 0 && $store.state.tokens < 100"> Rookie</span>
+             <span v-else-if="$store.state.tokens >= 100 && $store.state.tokens < 200"> Trainer</span>
+             <span v-else>Master</span>
+           </h5>
+          <h7 class="h7
+           fw-normal">My Team: {{ $store.state.team }}</h7>
            <br/>
           <button class="button-blue-yellow"><router-link to="/dashboard/profile/editprofile"><font-awesome-icon icon="pen" /> Edit Profile</router-link></button>
         </div>
