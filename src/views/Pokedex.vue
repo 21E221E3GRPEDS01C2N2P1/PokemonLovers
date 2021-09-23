@@ -9,10 +9,6 @@
 
 <script>
   export default {
-    props: [
-        'imageUrl',
-        'apiUrl'
-    ],
     data: () => {
       return {
         pokemonList: [],
