@@ -10,6 +10,7 @@ import ResetPassword from '../views/ResetPassword.vue'
 import PersonalityTest from '../views/PersonalityTest.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Profile from '../views/Profile.vue'
+import Pokedex from '../views/Pokedex.vue'
 import EditProfile from '../views/EditProfile.vue'
 import SearchProfile from '../views/SearchProfile.vue'
 import MockTestEasy from '../views/MockTestEasy.vue'
@@ -105,6 +106,14 @@ const routes = [
     path: '/dashboard/profile',
     name: 'Profile',
     component: Profile,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/dashboard/pokedex',
+    name: 'Pokedex',
+    component: Pokedex,
     meta: {
       requiresAuth: true
     }

@@ -97,7 +97,7 @@
                 </div>
               </div>
               <div class="py-5 text-center">
-                  <router-link class="poke-secondary-outlined dash-links" to="#"><font-awesome-icon icon="star" />My Team</router-link>
+                  <router-link class="poke-secondary-outlined dash-links" to="/dashboard/pokedex"><font-awesome-icon icon="star" />Pokedex</router-link>
               </div>
               
             </div>
